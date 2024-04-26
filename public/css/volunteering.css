@@ -1,0 +1,67 @@
+/*start Volunteering*/
+.volunteering{
+    margin-top: 130px ;
+    background-image: url('../images/volunteering-page.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.main-title{
+    color: var(--blue-color);
+}
+.form-container{
+    width:90%;
+}
+.head p,
+.form-head p{
+    color: var(--blue-color);
+}
+
+.form-group label{
+    color: var(--blue-color);
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.volunteering input::placeholder{
+    color: #088b8b82 !important;
+    font-size: 18px;
+}
+
+.volunteering input{
+    border: 1px solid #088b8b6f !important;
+    padding:15px 10px !important;
+    border-radius: 12px !important;
+    -webkit-border-radius: 12px !important;
+    -moz-border-radius: 12px !important;
+    -ms-border-radius: 12px !important;
+    -o-border-radius: 12px !important;
+    background-color: transparent !important;
+}
+
+.volunteering input:focus{
+    box-shadow: none !important;
+    border: 2px solid #088b8b !important;
+}
+.volunteering .btn{
+    background-color: var(--blue-color) !important;
+    color: white !important;
+    font-weight: 500;
+    font-size: 23px;
+    padding: 10px !important;
+    border-radius: 12px !important;
+    -webkit-border-radius: 12px !important;
+    -moz-border-radius: 12px !important;
+    -ms-border-radius: 12px !important;
+    -o-border-radius: 12px !important;
+}
+.volunteering .number-container .text{
+border-right: 2px solid #088b8b;
+color: #088b8b;
+}
+
+.volunteering .number-container .number{
+color: #088b8b;
+}
+
+  /* End Volunteering */
