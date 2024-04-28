@@ -17,7 +17,7 @@ const password = document.getElementById("password2"),
 
 signupCloseBtn.addEventListener(
   "click",
-  () => (window.location.href = "home.html")
+  () => (window.location.href = "index.html")
 );
 //functions for signup multi levels
 submitBtn.addEventListener("click", function () {
