@@ -32,9 +32,7 @@
             <ul class="nav-links">
                 <i class="fa-solid fa-xmark navCloseBtn"></i>
                 <li><a href="{{url('/home')}}" class="active">Home</a></li>
-                <li><a href="weather">Weather</a></li>
-                <li><a href="volunteering.html">Volunteering</a></li>
-                <li><a href="instruction.html" >Instructions</a></li>
+                <li><a href="adminPro.html" >Admin Pro</a></li>
                 
             </ul>
         </div>
@@ -47,22 +45,7 @@
         <div class="user-box">
             <i class="fa-solid fa-user user-icon" id="open-icon"></i>
             <ul class="user-links1">
-
-            @if (Auth::check())
-              <li><a href="/profile">Profile</a></li>
-              <li><a href="/logout">Logout</a></li>
-
-            @else
-                <li><a href="/register">Sign up</a></li>
-                <li><a href="/login">Login</a></li>
-            @endif
-
-               <!-- <li><a href="/register">Sign up</a></li>
-                <li><a href="/login">Login</a></li>-->
-            </ul>
-            <ul class="user-links2">
-            <li><a href="profile.html">Edit Profile</a></li>
-            <li><a href="" id="signout">Sign Out</a></li>
+                <li><a href="{{ route('programmer.logout') }}">Logout</a></li>
             </ul>
         </div>
         </div>  

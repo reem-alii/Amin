@@ -1,4 +1,4 @@
-const signupCloseBtn = document.querySelector(".signup-close"),
+let signupCloseBtn = document.querySelector(".signup-close"),
   //variables for signup multi levels
   slidePage = document.querySelector(".slide-page"),
   nextBtnFirst = document.querySelector(".firstNext"),
@@ -12,15 +12,16 @@ const signupCloseBtn = document.querySelector(".signup-close"),
 let current = 1;
 
 //variables for confirmed password
-const password = document.getElementById("password2"),
-  confirm_password = document.getElementById("confirm_password");
+/*const password = document.getElementById("password2"),
+  confirm_password = document.getElementById("confirm_password");*/
+
 
 signupCloseBtn.addEventListener(
   "click",
-  () => (window.location.href = "index.html")
+  () => (window.location.href = "/home")
 );
 //functions for signup multi levels
-submitBtn.addEventListener("click", function () {
+/*submitBtn.addEventListener("click", function () {
   bullet[current - 1].classList.add("active1");
   progressCheck[current - 1].classList.add("active1");
   current += 1;
@@ -28,7 +29,7 @@ submitBtn.addEventListener("click", function () {
     alert("Your Form Successfully Signed up");
     location.reload();
   }, 800);
-});
+});*/
 nextBtnFirst.addEventListener("click", function (event) {
   event.preventDefault();
   slidePage.style.marginLeft = "-36.5%";
@@ -61,7 +62,7 @@ prevBtnThird.addEventListener("click", function (event) {
 });
 //functions for confirmed password
 
-function validatePassword() {
+/*function validatePassword() {
   if (password.value != confirm_password.value) {
     confirm_password.setCustomValidity("Passwords Don't Match");
   } else {
@@ -69,4 +70,4 @@ function validatePassword() {
   }
 }
 password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
+confirm_password.onkeyup = validatePassword;*/

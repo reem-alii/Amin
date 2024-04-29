@@ -1,5 +1,5 @@
-@extends("layouts/header")
-@section('title', 'Home')
+@extends('programmer.layouts.Programmerheader')
+@section('title', 'programmer Home')
 @section ('content')
 <div class="anchor">
             <button class="green-btn">SAFE</button>
