@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InstructionController;
+use App\Http\Controllers\VolunteeringController;
 use App\Http\Controllers\auth\LoginController;
-
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -25,11 +26,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get("/logout",[LoginController::class,'logout']);
-
 Route::get("/profile",[ProfileController::class,'index']);
+Route::post("/update/profile/{id}",[ProfileController::class,'update'])->name("updateProfile");
 Route::get("/home",[HomeController::class,'index']);
-
+Route::get("/instruction",[InstructionController::class,'index']);
+Route::get("/volunteering",[VolunteeringController::class,'index']);
+Route::get("/logout",[LoginController::class,'logout']);
 
 
 

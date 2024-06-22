@@ -57,7 +57,7 @@ class RegisterController extends Controller
             'blood_type' => ['required', 'string', 'min:1', 'max:3'],
             'country' => ['required', 'string', 'max:255'],
             'address' => ['required', 'string', 'max:255'],
-            'number' => ['required',  'unique:users'],
+            'phone_number' => ['required',  'unique:users'],
             //يوجد مشكلة في Regular exp نحتاج ان نعدله
         ]);
     }
@@ -80,7 +80,7 @@ class RegisterController extends Controller
             'blood_type' => $data['blood_type'],
             'country' => $data['country'],
             'address' => $data['address'],
-            'number' => $data['number'],
+            'phone_number' => $data['phone_number'],
              
 
         ]);

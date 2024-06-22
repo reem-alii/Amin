@@ -187,8 +187,8 @@
                                 @enderror
                         </div>
                         <div class="field input-box">
-                            <label for="number">Phone number</label>
-                            <input id="number" type="Number"  name="number" class="form-control @error('number') is-invalid @enderror" name="number" value="{{ old('number') }}" required autocomplete="number" autofocus   placeholder="+00 000 000 000" >
+                            <label for="phone_number">Phone number</label>
+                            <input id="phone_number" type="Number"  name="phone_number" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}" required autocomplete="phone_number" autofocus   placeholder="+00 000 000 000" >
                                 @error('number')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

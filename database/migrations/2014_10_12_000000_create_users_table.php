@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('blood_type');
             $table->string('country');
-            $table->text('detailed_address');
+            $table->text('address');
             $table->string('phone_number');
             $table->rememberToken();
             $table->timestamps();

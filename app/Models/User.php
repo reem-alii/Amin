@@ -28,7 +28,7 @@ class User extends Authenticatable
         'blood_type',
         'country',
         'address',
-        'number',
+        'phone_number',
     ];
 
 
