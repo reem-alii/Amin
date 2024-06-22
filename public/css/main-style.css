@@ -1,0 +1,156 @@
+:root{
+    --emergency-red:#cb2b2b;
+    --blue-color:#088a8a;
+}
+/* Global */
+/* Button Styling */
+.green-btn{
+    height: 4em;
+    width: 200px;
+    margin: 0;
+    border: none;
+    border-radius: 8px;
+    /* background-image:url(../images/button-1.png) ;
+    background-size: cover; */
+    background: linear-gradient(to right, #057a7a 50%, var(--blue-color) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: var(--white-color);
+    font-size: 1.5em;
+    transition: all .2s ease-out;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -ms-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+.red-btn{
+    height: 4em;
+    width: 200px;
+    padding: 1em;
+    margin: 0;
+    border: none;
+    border-radius: 8px;
+    /* background-image:url(../images/button-2.png) ;
+    background-size: cover; */
+    background: linear-gradient(to right, #bb1d25 50%, var(--emergency-red) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: var(--white-color);
+    font-size: 1.5em;
+    transition: all .2s ease-out;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -ms-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+.green-btn:hover, .red-btn:hover{
+    background-position: left bottom;
+    cursor:pointer;
+}
+.anchor{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 100px;
+    left: 65%;
+    width: 100%;
+    font-weight: normal;
+    
+}
+/* Headers in-between pages */
+.primary-paragraph{
+    min-height: 8em;
+    background: url("../images/pattern-1.png") no-repeat center;
+    background-size: cover;
+}
+.primary-paragraph p{
+    font-size: 2em;
+    padding: 1em 4em;
+    text-align: center;
+    color: var(--blue-color);
+    line-height: 2em;
+}
+/* Header Backgrounds */
+.weather .primary-paragraph, .instructions .primary-paragraph, .footer .primary-paragraph{
+    background: url("../images/pattern-2.png") no-repeat center;
+    background-size: cover;
+    background-position-y: -950px;
+}
+/* Home section */
+.home{
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url("../images/home.png") no-repeat  center;
+    background-size: cover;
+    color: var(--white-color);
+}
+.home button, .instructions button{
+    height: auto;
+    width: auto;
+    padding: 0.5em 1em;
+    margin: 1.5em;
+    font-weight: 650;
+    font-size: 2em;
+}
+.home img{
+    width: 350px;
+    margin-top: 9em;
+}
+.home p{
+    font-size: 1.5em;
+    margin-top: 0.5em;
+}
+/* Weather Section */
+.weather-content{
+    height: 700px;
+    background: url("../images/weather.png") no-repeat center;
+    background-size: cover;
+}
+/* Statistics Section */
+.stat-content{
+    height: 300px;
+    background: url("../images/statistics.png") no-repeat center;
+    background-size: cover;
+}
+/* Instructions Section*/
+.instruct-content{
+    display: flex;
+    flex-direction: column;
+    padding: 2em 4em;
+    color: var(--white-color);
+    background: url("../images/instructions.png") no-repeat center;
+    background-size: cover;
+}
+.instruct-content ol{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+ol li{
+    font-size: 2em;
+    margin: 0 1.5rem;
+    line-height: 1.5em;
+    padding: 0.5em;
+}
+.instruct-content div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Footer */
+.footer .primary-paragraph p{
+    text-align: left;
+    font-size: 20px;
+}
