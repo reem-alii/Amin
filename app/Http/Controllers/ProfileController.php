@@ -17,5 +17,14 @@ class ProfileController extends Controller
         $user->update($request->all());
         return view('home');
     }
-
+    public function upload(
+        $requestUserImage = null,
+        $disk = 'public'
+    ){
+        $path = null;
+        if (request()->hasFile($requestUserImage) && request()->file($requestUserImage)->isValid()){
+            $path = 'storage/' . request()->file($requestUserImage)->store('images', $disk);
+        }
+        return $path ;
+    }
 }

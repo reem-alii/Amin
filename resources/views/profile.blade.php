@@ -11,7 +11,7 @@
             <form action="{{route('updateProfile',$user->id)}}" method="post">
                 @csrf 
                 <div class="image-div">
-                    <img src="./images/user.png" alt="">
+                <img alt="#">
                     <label for="file-path">
                         <i class="fa-solid fa-camera"></i>
                     </label>
@@ -34,18 +34,6 @@
                 <div class="input-box field">
                     <label for="email">Email</label>
                     <input type="email" name="email" value="{{$user->email}}"placeholder="Mohamed23@gmail.com" id="email" required/>
-                </div>
-                <div class="input-box field">
-                    <label for="password">Current Password</label>
-                    <input type="password" name="password" placeholder="Current Password" id="password">
-                </div>
-                <div class="input-box field">
-                    <label for="npassword">New Password</label>
-                    <input type="password" name="NewPassword" placeholder="New Password" id="password2" required>
-                </div>
-                <div class="input-box field">
-                    <label for="confirm_password">Confirm Password</label>
-                    <input type="password" placeholder="Confirm Password" id="confirm_password" >
                 </div>
                 <div class="input-box field half">
                     <div class="half-box">
