@@ -57,39 +57,38 @@
         </div>
         </div>
     </nav>
-    <section class="login-container">
+    <section class="login-container reset-container">
         <div class="form-box">
+            <a href="/login"><i class="fa-solid fa-arrow-left back-arrow"></i></a>
             <i class="fa-solid fa-xmark form-close login-close"></i>
             <!-- Reset Password From -->
             <div class="login-form">
                 <div class="header">
-                        <h2>{{ __('Reset Password') }}</h2>
+                <h2>Reset Password</h2>
+                <p>Enter your email to change your password</p>
                 </div> 
                 <div class="form">
-                     @if (session('status'))
+                    @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
                     <form action="{{ route('password.email') }}" method="post" >
-                        @csrf
-                       
-                       
-                        <div class="input-box">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" placeholder="Email" id="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus />
+                    @csrf
+                    <div class="input-box">
+                        <label for="email">Enter Your Email</label>
+                        <input type="email" name="email" placeholder="Email" id="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus />
                             @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                             @enderror
                         </div>
-                        
-                       
-                       
-                        <button type="submit"  class="button">{{ __('Send Password Reset Link') }}</button>
-                    
-                       
+                        <a>
+                        <button type="submit"  class="button">
+                            Send Link
+                        </button>
+                        </a>
                     </form>
                 </div>
             </div>

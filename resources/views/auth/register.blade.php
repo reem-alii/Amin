@@ -89,7 +89,7 @@
                     </div>
                 <div class="form form-outer" id="Signup-form">
                 <form action="{{ route('register') }}" method="post">
-                     @csrf
+                    @csrf
                     <div class="page slide-page">
                         <div class="input-box field half">
                             <div class="half-box">
@@ -121,21 +121,25 @@
                             @enderror
                         </div>
                         <div class="input-box field">
-                            <label for="email">Email</label>
-                            <input id="email" type="email" name="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                            <label for="id_number">ID Number</label>
+                            <input type="number" name="id_number" placeholder="Id Number" id="id_number" required />
                         </div>
                         <div class="field">
                             <button  class="firstNext next button ">Next</button>
                         </div>
-                        <div class="login-signup">Already have an account? <a href="/login" id="login">Login</a></div>
+                        <div class="login-signup">Or Login with <a href="/login" id="login">Email</a></div>
                     </div>
 
                     <div class="page">
+                    <div class="input-box field">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" name="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
                     <div class="input-box field">
                             <label for="password">Password</label>
                             <input id="password" type="password" name="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
@@ -149,6 +153,14 @@
                             <label for="confirm_password">Confirm Password</label>
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
                         </div>
+                        <div class="field btns">
+                            <button class="prev-1 prev button">Previous</button>
+                            <button class="next-1 next button">Next</button>
+                        </div>
+                        <div class="login-signup">Or Login with <a href="/login" id="login">Email</a></div>
+                    </div>
+
+                    <div class="page">
                         <div class="input-box field half">
                             <div class="half-box">
                                 <label for="blood_type">Blood Type</label>
@@ -169,14 +181,6 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="field btns">
-                            <button class="prev-1 prev button">Previous</button>
-                            <button class="next-1 next button">Next</button>
-                        </div>
-                        
-                    </div>
-
-                    <div class="page">
                         <div class="field input-box">
                             <label for="address">Detailed address</label>
                             <input id="address" type="text" name="address"  class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus   placeholder="Detailed address" >
@@ -195,16 +199,15 @@
                                     </span>
                                 @enderror
                         </div>
-                       <!-- <div class="last-chek field">
-                            <input type="radio" name="last-chek" id="last-chek">
-                            <label for="last-chek">If you sure about registering , complete it.</label>
-                        </div>-->
+                        <label class="last-chek field">
+                            <input type="checkbox" name="last-chek" id="last-chek">
+                            <span class="radio-check"></span>
+                            If you sure about registering, complete it.
+                        </label>
                         <div class="field btns">
                             <button class="prev-2 prev button">Previous</button>
                             <button type="submit" class="Sign-Up button" id = 'Sign_Up_btn' >Sign Up</button>
                         </div>
-                       
-
                     </div>
                 
                 </form>

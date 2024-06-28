@@ -51,7 +51,7 @@ text-decoration: none;
   }
 .login-container .form-box{
     position: fixed;
-    max-width: 400px;
+    max-width: 450px;
     min-width:320px;
     width: 100%;
     top: 50%;
@@ -61,7 +61,6 @@ text-decoration: none;
     background: #f5f2eae3;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.1);
-    border-radius:30px;
     box-shadow:0 0 15px #088b8b;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -151,6 +150,9 @@ text-decoration: none;
     cursor: pointer;
     font-size: 18px;
   }
+  .login-container .form .button:hover{
+    box-shadow:0 0 5px #0bd6d6f8;
+  }
   .login-container  .form .button +div{
     display: flex;
     width: 100%;
@@ -162,6 +164,10 @@ text-decoration: none;
     color:var(--blue-color);
     font-weight: 300;
   }
+  .login-container  .form .button +div a:hover{
+    cursor: pointer;
+    font-weight: 400;
+  }
   .login-container  .form  .login-signup{
     text-align: center;
     color:var(--blue-color);
@@ -172,4 +178,93 @@ text-decoration: none;
     color:var(--blue-color);
     font-weight: 700;
   }
+  
+  .login-container .form-check{
+    display: block;
+    padding-top:15px;
+    padding-left: 20px;
+    color:var(--blue-color);
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    gap:5px;
+    user-select: none;
+    position: relative;
+    cursor: pointer;
+  }
+  .login-container .form-check:hover .checkmark{
+    background-color: #b4b1a8b9;
+  }
+  /* .login-container .form-check:hover{
+    font-weight: 600;
+  } */
+  .login-container .form-check .form-check-input{
+    opacity: 0;
+    height: 0;
+    width: 0;
+    cursor: pointer;
+} 
+  .login-container .form-check .form-check-input:checked ~ .checkmark{
+    background-color: var(--blue-color);
+    /* border-color:#f5f2ea7a; */
+  }
+  .login-container .form-check .checkmark{
+    position: absolute;
+    top:15px;
+    left:0;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--blue-color);
+    margin:0 0 1px 3px;
+    transition: 0.1s;
+    -webkit-transition: 0.1s;
+    -moz-transition: 0.1s;
+    -ms-transition: 0.1s;
+    -o-transition: 0.1s;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-container .form-check .form-check-input:checked ~ .checkmark:after{
+  color:var(--white-bone-color);
+} 
+.login-container .form-check .checkmark:after {
+  content:"✓";
+  font-size: 12px;
+  color:transparent;
+  font-weight: 600;
+}
 /* End login form  */
+.reset-container .reset-back{
+  color:var(--blue-color);
+  font-weight: 700;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+.reset-container .form-close{
+  font-size: 35px;
+  top:20px;
+  right: 17px;
+}
+.reset-container .back-arrow{
+  position: absolute;
+  color:var(--white-bone-color);
+  font-size: 30px;
+  top:24px;
+  left:17px;
+  cursor: pointer;
+}
+.rest1-container .form-close{
+  top:10px;
+  font-size: 35px;
+}
+.rest1-container .form-box .form{
+  padding-bottom: 20px;
+}

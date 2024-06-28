@@ -1,10 +1,17 @@
 @extends("layouts/header")
 @section('title', 'Home')
 @section ('content')
+
+
 <div class="anchor">
-            <button class="green-btn">SAFE</button>
-            <button class="red-btn">EMERGENCY</button>
-        </div>            
+    @if ($predict_flood >= 50.0 || $predict_windstorm > 50.0)
+        <button class="green-btn">SAFE</button>
+        <button class="red-btn">EMERGENCY</button>
+    @endif
+    <input type="text" value="{{ $predict_flood }} && {{ $predict_windstorm }}" readonly style="width: 100%; resize: none;">
+</div>
+
+
 
     <!-- Home -->
     <section class="home">

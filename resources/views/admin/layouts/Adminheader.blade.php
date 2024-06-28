@@ -37,7 +37,6 @@
                 <li><a href="instruction.html" >Instructions</a></li>
                 <li><a href="adminUser.html" >Admin</a></li>
                 <li><a href="adminPro.html" >Admin Pro</a></li>
-                <li><a href="{{url('/profile')}}" >Profile</a></li>
             </ul>
         </div>
         <div class="icons">

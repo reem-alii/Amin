@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\programmer\ProgrammerHomeController;
+use App\Http\Controllers\programmer\TestModelController;
+use App\Http\Controllers\programmer\PredictionController;
 use App\Http\Controllers\programmer\auth\ProgrammerLoginController;
 
 
@@ -18,14 +20,22 @@ use App\Http\Controllers\programmer\auth\ProgrammerLoginController;
 |
 */
 
-Route::get('programmer/home',[ProgrammerHomeController::class,'index'])
+Route::get('/programmer/home',[ProgrammerHomeController::class,'index'])
 ->name('programmer.home')->middleware('auth:programmer');
 
-Route::get('programmer/logout',[ProgrammerLoginController::class,'logout'])->name('programmer.logout');
 
-Route::get('programmer/login',[ProgrammerLoginController::class,'login'])->name('programmer.login');
+Route::get('/programmer/testmodel',[TestModelController::class,'index'])->name('programmer.testmodel');
 
-Route::post('programmer/login',[ProgrammerLoginController::class,'check'])->name('programmer.check');
+Route::get('/programmer/logout',[ProgrammerLoginController::class,'logout'])->name('programmer.logout');
+
+Route::get('/programmer/getPrediction', [PredictionController::class,'getPrediction'])->name('programmer.getPrediction');
+
+
+Route::get('/programmer/getWindstormPrediction', [PredictionController::class,'getWindstormPrediction'])->name('programmer.getWindstormPrediction');
+
+Route::get('/programmer/login',[ProgrammerLoginController::class,'login'])->name('programmer.login');
+
+Route::post('/programmer/login',[ProgrammerLoginController::class,'check'])->name('programmer.check');
 
 
 

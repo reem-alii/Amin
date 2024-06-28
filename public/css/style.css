@@ -326,20 +326,20 @@ a {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  transition: var(--main-transition);
-  -webkit-transition: var(--main-transition);
-  -moz-transition: var(--main-transition);
-  -ms-transition: var(--main-transition);
-  -o-transition: var(--main-transition);
+  transition: all .25s ease-out;
+  -webkit-transition: all .25s ease-out;
+  -moz-transition: all .25s ease-out;
+  -ms-transition: all .25s ease-out;
+  -o-transition: all .25s ease-out;
+  font-weight: 500;
 }
+.Pmain-buttons .safe-btn:hover,
 .Pmain-buttons .emergency-btn:hover{
-  box-shadow: 0 0 5px #cb2b2b;
-  font-weight: 500;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    cursor:pointer;
+    font-weight: 600;
 }
-.Pmain-buttons .safe-btn:hover{
-  box-shadow: 0 0 5px #0a88a8;
-  font-weight: 500;
-}
+
 .Pmain-buttons .emergency-btn{
   background-image: url(../images/button-4.png);
   background-size: cover;
@@ -370,7 +370,7 @@ a {
   font-weight: 600;
 }
 .account-details form{
-  padding:0 170px;
+  padding:0 150px;
 }
 @media(max-width:767px){
   .account-details form{
@@ -460,11 +460,12 @@ a {
   border: 2px solid var(--blue-color);
   outline: none;
 }
+
 .account-details  form .button{
   width:100%;
   margin-bottom: 10px;
   font-size: 20px;
-  padding:15px 10px;
+  padding:20px 10px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -474,6 +475,9 @@ a {
   background-color: var(--blue-color);
   color: var(--white-color);
   cursor: pointer;
+}
+.account-details  form .button:hover{
+  box-shadow:0 0 5px #0bd6d6f8;
 }
 .account-details form .half{
   display: flex;
@@ -488,9 +492,9 @@ a {
   flex: 1;
 }
 .account-details footer{
-  padding:20px 200px;
-  font-size: 18px;
-  font-weight: 400;
+  padding:20px 200px 25px;
+  font-size: 20px;
+  font-weight: 500;
   display: flex;
 }
 .account-details footer p{
@@ -521,14 +525,19 @@ a {
   width: 100%;
   margin: 0 auto;
 }
-
+.instruction .number-container{
+  align-items: center;
+  padding-bottom: 30px;
+  padding-left:50px;
+}
 .instruction .number-container .text{
-  border-right: 2px solid #088b8b;
+  font-size: 20px;
   color: #088b8b;
 }
-
-.instruction .number-container .number{
-  color: #088b8b;
+.instruction .instructions-list ol:not(:last-of-type){
+  margin:10px 70px 20px 0;
 }
-
+.instruction .instructions-list ol:last-of-type{
+  margin:10px 70px 0 0;
+}
 /* end instruction */

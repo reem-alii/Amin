@@ -1,10 +1,7 @@
 @extends('programmer.layouts.Programmerheader')
 @section('title', 'programmer Home')
 @section ('content')
-<div class="anchor">
-            <button class="green-btn">SAFE</button>
-            <button class="red-btn">EMERGENCY</button>
-        </div>            
+          
 
     <!-- Home -->
     <section class="home">
@@ -14,9 +11,7 @@
         <div>
             <p>Forecasting and Civil Defense</p>
         </div>
-        <div>
-            <a href="/register"><button type="button" class="green-btn">Sign Up</button> </a>
-        </div>  
+ 
     </section>
     <!-- Weather-->
     <section class="weather" id="weather">

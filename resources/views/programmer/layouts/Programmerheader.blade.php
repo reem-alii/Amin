@@ -31,8 +31,8 @@
             </a>
             <ul class="nav-links">
                 <i class="fa-solid fa-xmark navCloseBtn"></i>
-                <li><a href="{{url('/home')}}" class="active">Home</a></li>
-                <li><a href="adminPro.html" >Admin Pro</a></li>
+                <li><a href="/programmer/home" class="active">Home</a></li>
+                <li><a href="/programmer/testmodel" >Test Model</a></li>
                 
             </ul>
         </div>

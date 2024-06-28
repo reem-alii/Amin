@@ -1,6 +1,5 @@
 @extends('layouts.project')
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +22,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <nav class="nav">
         <div class="main-nav">
@@ -58,8 +56,7 @@
         </div>
         </div>
     </nav>
-
-    <section class="login-container">
+    <section class="login-container rest1-container">
         <div class="form-box">
             <i class="fa-solid fa-xmark form-close login-close"></i>
             <!-- Reset Password From -->
@@ -71,7 +68,6 @@
                     <form action="{{ route('password.update') }}" method="post" id="Signin-form">
                         @csrf
                         <input type="hidden" name="token" value="{{ $token }}">
-
                         <div class="input-box">
                             <label for="email">Email</label>
                             <input type="email" name="email" placeholder="Email" id="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus />
@@ -90,21 +86,16 @@
                                     </span>
                             @enderror
                         </div>
-                        
                         <div class="input-box field">
                             <label for="confirm_password">Confirm Password</label>
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
                         </div>
                         <button type="submit" class="button">Reset Password</button>
-                    
-                        
-                       
                     </form>
                 </div>
             </div>
         </div>
     </section>
-
 </body>
 
 
