@@ -79,13 +79,12 @@
                                 <input class="form-control text-custom-color w-45" type="number" placeholder="Windgustspeed" name="windgustspeed"
                                     id="windgustspeed">
                             </div>
-                        </form>
+                        
                     </div>
                     <div class="py-4 text-center">
-                        <a href="/programmer/getWindstormPrediction">
-                            <button type="submit" id="btn-windstorm" class="px-4 py-2 fs-4 border-0 rounded-1">Test</button>
-                        </a>
+                        <button type="submit" id="btn-windstorm" class="px-4 py-2 fs-4 border-0 rounded-1">Test</button>
                     </div>
+                    </form>
                 </div>
                 <div class="flood col-md-5  ">
                     <h2 class="text-white-bone text-meduim fw-semi p-3 mb-3 text-center custom">Flood</h2>
@@ -113,13 +112,12 @@
                                 <input class="form-control text-custom-color w-24" type="number" name="SEP" id="SEP" placeholder="SEP">
                                 <input class="form-control text-custom-color w-24" type="number" name="DEC" id="DEC" placeholder="DEC">
                             </div>
-                        </form>
+                        
                     </div>
                     <div class="py-4 text-center">
-                        <a href="/programmer/getPrediction" method="post">
-                            <button type="submit" id="btn-flood" class="px-4 py-2 fs-4  border-0 rounded-1">Test</button>
-                        </a>
+                        <button type="submit" id="btn-flood" class="px-4 py-2 fs-4  border-0 rounded-1">Test</button>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>

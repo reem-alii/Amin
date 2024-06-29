@@ -11,7 +11,7 @@ class PredictionController extends Controller
 {
     public function getPrediction(Request $request)
     {   
-        dd($request->all());
+        
 
         $client = new Client();                  
         $data = [
