@@ -61,7 +61,7 @@
                     <h2 class="text-white-bone text-meduim fw-semi text-center p-3 mb-3">Windstorm</h2>
                     <div class="inner bg-white-bone custom-p-3 rounded-4 mb-3">
                         <div class="text-center fw-bold mb-3"></div>
-                        <form action="">
+                        <form action="{{route('programmer.getWindstormPrediction')}}" method="post">
                             <div class="form-group mb-3 d-flex justify-content-between ">
                                 <input class="form-control text-custom-color w-45" type="number" placeholder="Temperature" name="temperature" id="temperature">
                                 <input class="form-control text-custom-color w-45" type="number" placeholder="Relative Humidity" name="relativeHumidity"
@@ -90,7 +90,7 @@
                     <div class="inner bg-white-bone custom-p-3 rounded-4 mb-3">
                         <div class="text-center fw-bold mb-3">
                         </div>
-                        <form action="">
+                        <form action="{{route('programmer.getPrediction')}}" method="post">
                             <div class="form-group mb-3 d-flex  justify-content-between ">
                                 <input class="form-control text-custom-color w-24" type="text" name="jan" id="jan" placeholder="JAN">
                                 <input class="form-control text-custom-color w-24" type="text" name="APR" id="APR" placeholder="APR">

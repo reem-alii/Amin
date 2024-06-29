@@ -10,11 +10,13 @@ use GuzzleHttp\Client;
 class PredictionController extends Controller
 {
     public function getPrediction(Request $request)
-    {
+    {   
+        dd($request->all());
+
         $client = new Client();                  
         $data = [
-            //'YEAR' => 1901,
-            'JAN' => floatval($request->input('jan')),
+            
+            'JAN' => floatval($request->input('JAN')),
             'FEB' => floatval($request->input('FEB')),
             'MAR' => floatval($request->input('MAR')),
             'APR' => floatval($request->input('APR')),
