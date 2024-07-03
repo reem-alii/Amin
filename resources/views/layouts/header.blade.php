@@ -33,8 +33,10 @@
                 <i class="fa-solid fa-xmark navCloseBtn"></i>
                 <li><a href="{{url('/home')}}" class="active">Home</a></li>
                 <li><a href="weather">Weather</a></li>
-                <li><a href="volunteering.html">Volunteering</a></li>
-                <li><a href="{{url('/instruction')}}" >Instructions</a></li>
+                <li><a href="{{route('volunteering.create')}}">Volunteering</a></li>
+                <li><a href="{{route('instructions.index')}}" >Instructions</a></li>
+                <li><a href="{{route('adminUser.index')}}" >Admin</a></li>
+                <li><a href="adminPro.html" >Admin Pro</a></li>
                 
             </ul>
         </div>
