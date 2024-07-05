@@ -29,7 +29,7 @@ class User extends Authenticatable implements MustVerifyEmail
         'blood_type',
         'country',
         'address',
-        'number',
+        'phone_number',
     ];
 
 

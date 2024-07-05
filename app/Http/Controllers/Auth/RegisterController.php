@@ -81,7 +81,7 @@ class RegisterController extends Controller
             'blood_type' => $data['blood_type'],
             'country' => $data['country'],
             'address' => $data['address'],
-            'number' => $data['number'],
+            'phone_number' => $data['phone_number'],
              
 
         ]);

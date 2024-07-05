@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InstructionsController;
+use App\Http\Controllers\VolunteeringController;
+use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\auth\LoginController;
-use App\Http\Controllers\auth\RegisterController;
+
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -23,13 +26,12 @@ Route::get('/', function () {
 });
 
 
-Auth::routes(['verify'=>true]);
+Auth::routes();
 
 Route::get("/logout",[LoginController::class,'logout']);
 
-Route::get("/profile",[ProfileController::class,'index'])->middleware('verified');
-Route::get("/",[HomeController::class,'getdata']);
-Route::get("/home",[HomeController::class,'getdata']);
+Route::get("/profile",[ProfileController::class,'index']);
+Route::get("/home",[HomeController::class,'index']);
 
 
 

@@ -33,8 +33,10 @@
                 <i class="fa-solid fa-xmark navCloseBtn"></i>
                 <li><a href="{{url('/home')}}" class="active">Home</a></li>
                 <li><a href="weather">Weather</a></li>
-                <li><a href="volunteering.html">Volunteering</a></li>
-                <li><a href="instruction.html" >Instructions</a></li>
+                <li><a href="{{route('volunteering.create')}}">Volunteering</a></li>
+                <li><a href="{{route('instructions.index')}}" >Instructions</a></li>
+                <li><a href="{{route('adminUser.index')}}" >Admin</a></li>
+                <li><a href="adminPro.html" >Admin Pro</a></li>
                 
             </ul>
         </div>
@@ -50,7 +52,14 @@
 
             @if (Auth::check())
               <li><a href="/profile">Profile</a></li>
-              <li><a href="/logout">Logout</a></li>
+              <li><a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            log out</a></li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                            style="display: none;">
+                            @csrf
+                        </form>
+
 
             @else
                 <li><a href="/register">Sign up</a></li>

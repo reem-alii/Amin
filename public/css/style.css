@@ -326,20 +326,20 @@ a {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  transition: all .25s ease-out;
-  -webkit-transition: all .25s ease-out;
-  -moz-transition: all .25s ease-out;
-  -ms-transition: all .25s ease-out;
-  -o-transition: all .25s ease-out;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+.Pmain-buttons .emergency-btn:hover{
+  box-shadow: 0 0 5px #cb2b2b;
   font-weight: 500;
 }
-.Pmain-buttons .safe-btn:hover,
-.Pmain-buttons .emergency-btn:hover{
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-    cursor:pointer;
-    font-weight: 600;
+.Pmain-buttons .safe-btn:hover{
+  box-shadow: 0 0 5px #0a88a8;
+  font-weight: 500;
 }
-
 .Pmain-buttons .emergency-btn{
   background-image: url(../images/button-4.png);
   background-size: cover;
