@@ -68,6 +68,16 @@
         </div>  
        
     </nav>
-    
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+        window.OneSignalDeferred = window.OneSignalDeferred || [];
+        OneSignalDeferred.push(async function(OneSignal) {
+            await OneSignal.init({
+                appId: "5153be2b-78c2-40ec-b4f4-662f37e7b8c9",
+            });
+            console.log(OneSignal)
+        });
+    </script>
+</body>    
 @yield('content');
 

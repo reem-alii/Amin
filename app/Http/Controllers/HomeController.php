@@ -57,7 +57,7 @@ class HomeController extends Controller
 
             $currentMinutes = date('i');
 
-            if ($currentMinutes == '49') {
+            if ($currentMinutes == '12') {
                 $j++;
 
                 if ($j > 3) {

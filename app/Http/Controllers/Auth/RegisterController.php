@@ -59,7 +59,6 @@ class RegisterController extends Controller
             'country' => ['required', 'string', 'max:255'],
             'address' => ['required', 'string', 'max:255'],
             'number' => ['required',  'unique:users'],
-            //يوجد مشكلة في Regular exp نحتاج ان نعدله
         ]);
     }
 

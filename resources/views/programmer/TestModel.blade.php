@@ -61,7 +61,9 @@
                     <h2 class="text-white-bone text-meduim fw-semi text-center p-3 mb-3">Windstorm</h2>
                     <div class="inner bg-white-bone custom-p-3 rounded-4 mb-3">
                         <div class="text-center fw-bold mb-3"></div>
-                        <form action="">
+                        <form action="{{route('programmer.getWindstormPrediction')}}" method="post">
+                            @csrf
+                            @method('post')
                             <div class="form-group mb-3 d-flex justify-content-between ">
                                 <input class="form-control text-custom-color w-45" type="number" placeholder="Temperature" name="temperature" id="temperature">
                                 <input class="form-control text-custom-color w-45" type="number" placeholder="Relative Humidity" name="relativeHumidity"
@@ -77,45 +79,45 @@
                                 <input class="form-control text-custom-color w-45" type="number" placeholder="Windgustspeed" name="windgustspeed"
                                     id="windgustspeed">
                             </div>
-                        </form>
+                        
                     </div>
                     <div class="py-4 text-center">
-                        <a href="/programmer/getWindstormPrediction">
-                            <button id="btn-windstorm" class="px-4 py-2 fs-4 border-0 rounded-1">Test</button>
-                        </a>
+                        <button type="submit" id="btn-windstorm" class="px-4 py-2 fs-4 border-0 rounded-1">Test</button>
                     </div>
+                    </form>
                 </div>
                 <div class="flood col-md-5  ">
                     <h2 class="text-white-bone text-meduim fw-semi p-3 mb-3 text-center custom">Flood</h2>
                     <div class="inner bg-white-bone custom-p-3 rounded-4 mb-3">
                         <div class="text-center fw-bold mb-3">
                         </div>
-                        <form action="">
+                        <form action="{{route('programmer.getPrediction')}}" method="post" >
+                            @csrf
+                            @method('post')
                             <div class="form-group mb-3 d-flex  justify-content-between ">
-                                <input class="form-control text-custom-color w-24" type="text" name="jan" id="jan" placeholder="JAN">
-                                <input class="form-control text-custom-color w-24" type="text" name="APR" id="APR" placeholder="APR">
-                                <input class="form-control text-custom-color w-24" type="text" name="JUL" id="JUL" placeholder="JUL">
-                                <input class="form-control text-custom-color w-24" type="text" name="OCT" id="OCT" placeholder="OCT">
+                                <input class="form-control text-custom-color w-24" type="number" name="JAN" id="JAN" placeholder="1'st_M">
+                                <input class="form-control text-custom-color w-24" type="number" name="APR" id="APR" placeholder="2'nd_M">
+                                <input class="form-control text-custom-color w-24" type="number" name="JUL" id="JUL" placeholder="3'rd_M">
+                                <input class="form-control text-custom-color w-24" type="number" name="OCT" id="OCT" placeholder="4'th_M">
                             </div>
                             <div class="form-group mb-3 d-flex  justify-content-between ">
-                                <input class="form-control text-custom-color w-24" type="text" name="FEB" id="FEB" placeholder="FEB">
-                                <input class="form-control text-custom-color w-24" type="text" name="MAY" id="MAY" placeholder="MAY">
-                                <input class="form-control text-custom-color w-24" type="text" name="AUG" id="AUG" placeholder="AUG">
-                                <input class="form-control text-custom-color w-24" type="text" name="NOV" id="NOV" placeholder="NOV">
+                                <input class="form-control text-custom-color w-24" type="number" name="FEB" id="FEB" placeholder="5'th_M">
+                                <input class="form-control text-custom-color w-24" type="number" name="MAY" id="MAY" placeholder="6'th_M">
+                                <input class="form-control text-custom-color w-24" type="number" name="AUG" id="AUG" placeholder="7'th_M">
+                                <input class="form-control text-custom-color w-24" type="number" name="NOV" id="NOV" placeholder="8'th_M">
                             </div>
                             <div class="form-group mb-3 d-flex  justify-content-between ">
-                                <input class="form-control text-custom-color w-24" type="text" name="MAR" id="MAR" placeholder="MAR">
-                                <input class="form-control text-custom-color w-24" type="text" name="JUN" id="JUN" placeholder="JUN">
-                                <input class="form-control text-custom-color w-24" type="text" name="SEP" id="SEP" placeholder="SEP">
-                                <input class="form-control text-custom-color w-24" type="text" name="DEC" id="DEC" placeholder="DEC">
+                                <input class="form-control text-custom-color w-24" type="number" name="MAR" id="MAR" placeholder="9'th_M">
+                                <input class="form-control text-custom-color w-24" type="number" name="JUN" id="JUN" placeholder="10'th_M">
+                                <input class="form-control text-custom-color w-24" type="number" name="SEP" id="SEP" placeholder="11'th_M">
+                                <input class="form-control text-custom-color w-24" type="number" name="DEC" id="DEC" placeholder="12'th_M">
                             </div>
-                        </form>
+                        
                     </div>
                     <div class="py-4 text-center">
-                        <a href="/programmer/getPrediction">
-                            <button id="btn-flood" class="px-4 py-2 fs-4  border-0 rounded-1">Test</button>
-                        </a>
+                        <button type="submit" id="btn-flood" class="px-4 py-2 fs-4  border-0 rounded-1">Test</button>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>

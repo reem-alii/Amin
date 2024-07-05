@@ -28,10 +28,10 @@ Route::get('/programmer/testmodel',[TestModelController::class,'index'])->name('
 
 Route::get('/programmer/logout',[ProgrammerLoginController::class,'logout'])->name('programmer.logout');
 
-Route::get('/programmer/getPrediction', [PredictionController::class,'getPrediction'])->name('programmer.getPrediction');
+Route::post('/programmer/getPrediction', [PredictionController::class,'getPrediction'])->name('programmer.getPrediction');
 
 
-Route::get('/programmer/getWindstormPrediction', [PredictionController::class,'getWindstormPrediction'])->name('programmer.getWindstormPrediction');
+Route::post('/programmer/getWindstormPrediction', [PredictionController::class,'getWindstormPrediction'])->name('programmer.getWindstormPrediction');
 
 Route::get('/programmer/login',[ProgrammerLoginController::class,'login'])->name('programmer.login');
 

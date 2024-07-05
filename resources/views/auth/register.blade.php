@@ -1,7 +1,4 @@
 @extends('layouts.project')
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

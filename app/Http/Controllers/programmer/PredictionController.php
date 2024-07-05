@@ -1,11 +1,8 @@
 <?php
-
 namespace App\Http\Controllers\programmer;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
-
 
 class PredictionController extends Controller
 {
@@ -37,8 +34,6 @@ class PredictionController extends Controller
 
         return view('programmer.prediction', ['predict_floods' => $prediction]);
     }
-
-
     public function getWindstormPrediction(Request $request)
     {
         $client = new Client();                  
@@ -51,15 +46,17 @@ class PredictionController extends Controller
             'windgustspeed' => floatval($request->input('windgustspeed')),
 
         ];
-
         $response = $client->request('POST', 'http://127.0.0.1:8000/predict_windstorm', [
             'headers' => ['Content-Type' => 'application/json'],
             'body' => json_encode($data),
         ]);
-
         $prediction = json_decode($response->getBody()->getContents());
-
         return view('programmer.windstorm', ['predict_windstorm' => $prediction]);
     }
-    
 }
+
+
+
+
+
+
