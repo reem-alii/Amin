@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Volunteer;
 use App\Notifications\Alarm;
 use Illuminate\Support\Facades\Notification;
+use Ladumor\OneSignal\OneSignal;
 
 class AdminUserController extends Controller
 {
@@ -82,6 +83,26 @@ public function sendAlarms(){
         // dd('done');
 // $user->notify(new SendAlarm($details));
 } 
+
+// ...
+
+public function sendPushNotificationToAllUsers()
+{
+        $users = User::all(); 
+        $message = 'EMERGENCY ALERT❗'; 
+        
+        foreach ($users as $user) 
+        {
+            OneSignal::sendPushNotificationToAllUsers($message, $user->onesignal_player_id);
+        }
+        return to_route("adminUser.index");
+
+}
+public function executeBoth()
+{
+       // sendAlarms()
+       // sendPushNotification()
+}
 
 
 }
