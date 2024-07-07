@@ -11,8 +11,17 @@ class HomeController extends Controller
 {
 
 
-    public static function getdata()
-    {   
+    public static function getdata(Request $request)
+    {   if(Auth::check())
+        {
+            $userId = Auth::id();
+            $newState = $request->input('state');
+
+            $user = \App\Models\User::find($userId);
+            $user->state = $newState;
+            $user->save();
+        }
+        
 
         $i = 1;
         $j = 1;
@@ -89,12 +98,27 @@ class HomeController extends Controller
             
             return view('home', ['predict_flood' => $prediction , 'predict_windstorm' => $prediction1]);
 
+            
         
         }
 
 
     }
-   
+  
+    public function updateUserState(Request $request)
+    {
+        
+        $userId = Auth::id();
+        $newState = $request->input('state');
+
+        $user = \App\Models\User::find($userId);
+        $user->state = $newState;
+        $user->save();
+        return view('home');
+    
+       
+    }
+    
 
 }
 

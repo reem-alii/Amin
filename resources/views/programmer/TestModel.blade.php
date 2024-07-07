@@ -81,12 +81,11 @@
                                     <input class="form-control text-custom-color w-45" step="0.01" type="number" placeholder="Windgustspeed" name="windgustspeed"
                                         id="windgustspeed">
                                 </div>
+                                </div>
                                 <div class="py-4 text-center">
                                     <button type="submit" id="btn-windstorm" class="px-4 py-2 fs-4 border-0 rounded-1">Test</button>
                                 </div>
                             </form>
-                        </div>
-                        
                     </div>
                     <div class="flood col-md-5  ">
                         <h2 class="text-white-bone text-meduim fw-semi p-3 mb-3 text-center custom">Flood</h2>
@@ -114,11 +113,11 @@
                                     <input class="form-control text-custom-color w-24" step="0.01" type="number" name="SEP" id="SEP" placeholder="11'th_M">
                                     <input class="form-control text-custom-color w-24" step="0.01" type="number" name="DEC" id="DEC" placeholder="12'th_M">
                                 </div>
+                                </div>
                                 <div class="py-4 text-center">
                                     <button type="submit" id="btn-flood" class="px-4 py-2 fs-4  border-0 rounded-1">Test</button>
                                 </div>
                             </form>
-                        </div>
                     </div>
                 </div>
             </div>

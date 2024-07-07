@@ -1,10 +1,7 @@
 @extends("layouts/header")
-@section('title', 'Home')
+@section("title") Profile @stop
 @section ('content')
-<div class="Pmain-buttons">
-        <button type="button" class="safe-btn">SAFE</button>
-        <button type="button" class="emergency-btn">Emergency</button>
-    </div>
+
     <section class="account-details">
         <h1>Account Details</h1>
         <div class="form" id="Profile-form">

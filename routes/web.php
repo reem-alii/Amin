@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
+use App\Http\Controllers\auth\VerificationController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -29,7 +30,7 @@ Route::get("/logout",[LoginController::class,'logout']);
 Route::get("/profile",[ProfileController::class,'index'])->middleware('verified');
 Route::get("/",[HomeController::class,'getdata']);
 Route::get("/home",[HomeController::class,'getdata']);
-Route::get("/email/verify",[RegisterController::class,'verify'])->name('email.verify');
+Route::post('/update-user-state', [HomeController::class,'getdata'])->name('update-user-state');
 
 
 

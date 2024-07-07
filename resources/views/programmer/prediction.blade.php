@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Āmin</title>
-    <link rel="shortcut icon" href="{{asset('images/logo1.jpg')}}" type="image/x-icon">
+    <title>Test Models</title>
+    <link rel="shortcut icon" href="{{asset('images/logo.svg')}}" type="image/x-icon">
     <!-- Bootstrap Utilities CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -92,22 +92,22 @@
                         </div>
                         <form action="{{route('programmer.getPrediction')}}" method="post">
                             <div class="form-group mb-3 d-flex  justify-content-between ">
-                                <input class="form-control text-custom-color w-24" type="text" name="jan" id="jan" placeholder="JAN">
-                                <input class="form-control text-custom-color w-24" type="text" name="APR" id="APR" placeholder="APR">
-                                <input class="form-control text-custom-color w-24" type="text" name="JUL" id="JUL" placeholder="JUL">
-                                <input class="form-control text-custom-color w-24" type="text" name="OCT" id="OCT" placeholder="OCT">
+                                <input class="form-control text-custom-color w-24" type="text" name="jan" id="jan" placeholder="1'st_M">
+                                <input class="form-control text-custom-color w-24" type="text" name="APR" id="APR" placeholder="2'nd_M">
+                                <input class="form-control text-custom-color w-24" type="text" name="JUL" id="JUL" placeholder="3'rd_M">
+                                <input class="form-control text-custom-color w-24" type="text" name="OCT" id="OCT" placeholder="4'th_M">
                             </div>
                             <div class="form-group mb-3 d-flex  justify-content-between ">
-                                <input class="form-control text-custom-color w-24" type="text" name="FEB" id="FEB" placeholder="FEB">
-                                <input class="form-control text-custom-color w-24" type="text" name="MAY" id="MAY" placeholder="MAY">
-                                <input class="form-control text-custom-color w-24" type="text" name="AUG" id="AUG" placeholder="AUG">
-                                <input class="form-control text-custom-color w-24" type="text" name="NOV" id="NOV" placeholder="NOV">
+                                <input class="form-control text-custom-color w-24" type="text" name="FEB" id="FEB" placeholder="5'th_M">
+                                <input class="form-control text-custom-color w-24" type="text" name="MAY" id="MAY" placeholder="6'th_M">
+                                <input class="form-control text-custom-color w-24" type="text" name="AUG" id="AUG" placeholder="7'th_M">
+                                <input class="form-control text-custom-color w-24" type="text" name="NOV" id="NOV" placeholder="8'th_M">
                             </div>
                             <div class="form-group mb-3 d-flex  justify-content-between ">
-                                <input class="form-control text-custom-color w-24" type="text" name="MAR" id="MAR" placeholder="MAR">
-                                <input class="form-control text-custom-color w-24" type="text" name="JUN" id="JUN" placeholder="JUN">
-                                <input class="form-control text-custom-color w-24" type="text" name="SEP" id="SEP" placeholder="SEP">
-                                <input class="form-control text-custom-color w-24" type="text" name="DEC" id="DEC" placeholder="DEC">
+                                <input class="form-control text-custom-color w-24" type="text" name="MAR" id="MAR" placeholder="9'th_M">
+                                <input class="form-control text-custom-color w-24" type="text" name="JUN" id="JUN" placeholder="10'th_M">
+                                <input class="form-control text-custom-color w-24" type="text" name="SEP" id="SEP" placeholder="11'th_M">
+                                <input class="form-control text-custom-color w-24" type="text" name="DEC" id="DEC" placeholder="12'th_M">
                             </div>
                         </form>
                     </div>
@@ -120,17 +120,11 @@
             </div>
         </div>
     </main>
-    <footer id="modelFooter" class="py-2">
-        <div class="container">
-            <div class="number-container d-flex p-3">
-                <div class="text px-3 ">
-                    <p class="m-0 fw-medium">Emergency number</p>
-                </div>
-                <div class="number px-2">
-                    <p class="m-0 fw-medium">19999</p>
-                </div>
+    <footer class="footer">
+            <div class="primary-paragraph">
+                <p>Emergency number |  19999</p>
+                <p>All rights reserved.</p>
             </div>
-        </div>
     </footer>
     <div id="popup-flood" class="popup-flood d-block">
         <div class="container d-flex justify-content-center align-items-center h-100">

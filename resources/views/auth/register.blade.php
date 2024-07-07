@@ -88,7 +88,7 @@
                     </div>
                     </div>
                 <div class="form form-outer" id="Signup-form">
-                <form action="{{ route('email.verify') }}" method="post">
+                <form action="{{ route('register') }}" method="post">
                     @csrf
                     <div class="page slide-page">
                         <div class="input-box field half">

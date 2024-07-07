@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/email/verify';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -86,11 +86,6 @@ class RegisterController extends Controller
              
 
         ]);
-    }
-
-    public function verify()
-    {
-        return view('auth.verify');
     }
 
 

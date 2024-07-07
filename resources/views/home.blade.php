@@ -1,3 +1,4 @@
+
 @extends('layouts/header')
 @section("title") Āmin-Home @stop
 @section ('content')
@@ -11,11 +12,11 @@
             <div>
                 <p>For Forecasting and Civil Defense</p>
             </div>
-            <div>
-                @unless (Auth::check())
+            @unless (Auth::check())
+                <div>
                     <a href="/register"><button class="green-btn">Sign Up</button> </a>
-                @endunless
-            </div>  
+                </div> 
+            @endunless 
         </section>
         <!-- Weather-->
         <section class="weather" id="weather">
@@ -172,3 +173,4 @@
         </footer>
     </body>
 @endsection
+
