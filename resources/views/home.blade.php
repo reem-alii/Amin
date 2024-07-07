@@ -1,6 +1,7 @@
 @extends("layouts/header")
 @section('title', 'Home')
 @section ('content')
+
 <div class="anchor">
             <button class="green-btn">SAFE</button>
             <button class="red-btn">EMERGENCY</button>

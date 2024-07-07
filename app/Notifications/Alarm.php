@@ -37,18 +37,21 @@ class Alarm extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-                    ->greeting($this->details['greetning'])
+                    ->greeting($this->details['greeting'])
                     ->line($this->details['body'])
                     ->action($this->details['actionText'],$this->details['actionUrl'])
                     ->line($this->details['lastLine']);
     }
 
-    public function toBroadcast(object $notifiable): BroadcastMessage
-    {
-        return new BroadcastMessage([
-
-        ]);
-    }
+    // public function toBroadcast(object $notifiable): BroadcastMessage
+    // {
+    //     // return new BroadcastMessage([
+    //     //     'greeting' => $this->details["greeting"],
+    //     //     'body' => $this->details["body"],
+    //     //     'line' => $this->details["lastLine"],
+    //     //     'icon'=>"alert.png"
+    //     // ]);
+    // }
 
 
  

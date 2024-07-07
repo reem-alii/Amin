@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('user_email');
-            $table->foreign('user_email')->references('email')->on('users')->onDelete('cascade');
+            $table->foreign('user_email')->unique()->references('email')->on('users')->onDelete('cascade');
             $table->integer('phone_number');
             $table->string('volunteering_type');
             $table->text('skills')->nullable();

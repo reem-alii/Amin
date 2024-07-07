@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Āmin</title>
-    <link rel="shortcut icon" href="images/logo1.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logo.svg" type="image/x-icon">
     <!-- Bootstrap Utilities CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -49,15 +49,31 @@
         <div class="user-box">
             <i class="fa-solid fa-user user-icon" id="open-icon"></i>
             <ul class="user-links1">
-                <li><a href="signup.html">Sign up</a></li>
-                <li><a href="login.html">Login</a></li>
+            @if (Auth::check())
+              <li><a href="/profile">Profile</a></li>
+              <li><a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            log out</a></li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                            style="display: none;">
+                            @csrf
+                        </form>
+
+
+            @else
+                <li><a href="/register">Sign up</a></li>
+                <li><a href="/login">Login</a></li>
+            @endif
+
+               <!-- <li><a href="/register">Sign up</a></li>
+                <li><a href="/login">Login</a></li>-->
             </ul>
             <ul class="user-links2">
             <li><a href="profile.html">Edit Profile</a></li>
             <li><a href="" id="signout">Sign Out</a></li>
             </ul>
         </div>
-    </div>
+        </div>  
     </nav>
     <div class="Pmain-buttons">
         <button type="button" class="safe-btn">SAFE</button>
@@ -67,20 +83,18 @@
         <section class="main-volunteering">
             <div class="container">
                 <!-- main content -->
-                <div class="main-content py-5">
-                    <div class="head  text-center">
-                        
-                        <h1 class="fs-1 fw-bolder  mb-1  main-title">Volunteering</h1>
-                        <p class="fs-5">to provide relief to <span class="fw-bold">those affected</span></p>
+                <div class="main-content">
+                    <div class="head text-center">
+                        <h1 class="mb-1  main-title">Volunteering</h1>
+                        <p class="fs-3">to provide relief to <span class="fw-bold">those affected</span></p>
                     </div>
 
                     <div class="form-container  mx-auto pt-5">
                         <div class="form-head mb-4">
-                            <h2 class="fw-bolder main-title fs-1">Join Us</h2>
-                            <p>Volunteer today, so that you can find <br>
+                            <h2 class=" main-title">Join Us</h2>
+                            <p class="fs-4">Volunteer today, so that you can find <br>
                             someone to help you tomorrow</p>
                         </div>
-
                         <!-- error handling -->
                         @if ($errors->any())
                             <div class="alert alert-danger">
@@ -149,23 +163,17 @@
                                     </label>
                                 </div>
                                 <div>
-                                    <button type="submit" class="btn btn-safe  fs-4 fw-bolder w-100">Join Us</button>
+                                    <button type="submit" class="btn btn-safe  w-100">Join Us</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="number-container d-flex ms-5 p-3">
-                    <div class="text px-3 fw-medium">
-                        <p class="m-0">Emergency number</p>
-                    </div>
-                    <div class="number px-2">
-                        <p class="m-0 fw-medium">19999</p>
-                    </div>
-                </div>
-            </div>
         </section>
     </main>
+    <footer>
+        <p>Emergency number   |   19999</p> 
+        <p>All rights reserved.</p> 
+    </footer>
 </body>

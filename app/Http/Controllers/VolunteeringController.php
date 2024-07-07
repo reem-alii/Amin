@@ -18,7 +18,7 @@ class VolunteeringController extends Controller
         request()->validate([
             'firstName' => ['required'],
             'lastName' => ['required'],
-            'volunteerEmail' => ['required', 'email','exists:users,email'],
+            'volunteerEmail' => ['required', 'email','exists:users,email','unique:users,email'],
             'phoneNumber' => ['required'],
             'volunteeringType' => ['required'],
             'availability' => ['required'],

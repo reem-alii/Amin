@@ -1,67 +1,116 @@
 /*start Volunteering*/
 .volunteering{
-    margin-top: 130px ;
+    margin-top: 140px ;
+    padding: 40px 90px 10px;
     background-image: url('../images/volunteering-page.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
-.main-title{
-    color: var(--blue-color);
+.volunteering h1{
+    font-size: 58px;
+    font-weight: 600;
+    
+}
+.head p{
+    font-weight: 500;
 }
 .form-container{
-    width:90%;
+    width:96%;
 }
+
+.main-title{
+    color: var(--blue-color);
+    font-size: 50px;
+    font-weight: 600;
+}
+
 .head p,
 .form-head p{
     color: var(--blue-color);
 }
 
-.form-group label{
+.form-group label:not(:last-child){
     color: var(--blue-color);
-    font-size: 23px;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.form-group label:last-child{
+    color: var(--blue-color);
+    font-size: 26px;
     margin-bottom: 10px;
 }
 
 .volunteering input::placeholder{
     color: #088b8b82 !important;
-    font-size: 18px;
+    font-size: 24px;
 }
 
 .volunteering input{
     border: 1px solid #088b8b6f !important;
-    padding:15px 10px !important;
-    border-radius: 12px !important;
-    -webkit-border-radius: 12px !important;
-    -moz-border-radius: 12px !important;
-    -ms-border-radius: 12px !important;
-    -o-border-radius: 12px !important;
+    padding:25px 15px !important;
+    border-radius: 15px !important;
+    -webkit-border-radius: 15px !important;
+    -moz-border-radius: 15px !important;
+    -ms-border-radius: 15px !important;
+    -o-border-radius: 15px !important;
     background-color: transparent !important;
 }
-
+.volunteering select:focus,
 .volunteering input:focus{
+    color:var(--blue-color);
     box-shadow: none !important;
     border: 2px solid #088b8b !important;
 }
 .volunteering .btn{
     background-color: var(--blue-color) !important;
     color: white !important;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 34px;
+    padding: 13px 15px !important;
+    border-radius: 15px !important;
+    -webkit-border-radius: 15px !important;
+    -moz-border-radius: 15px !important;
+    -ms-border-radius: 15px !important;
+    -o-border-radius: 15px !important;
+    box-shadow:0 0 3px #067777;
+    margin-bottom: 25px;
+}
+.volunteering .btn:hover{
+    box-shadow:0 0 7px #067777;
+}
+
+
+.volunteering .form-group select{
+    border: 1px solid #088b8b6f;
+    padding:19px 15px;
+    color:#088b8bf1;
+    background-color: transparent;
+    border-radius: 15px !important;
+    -webkit-border-radius: 15px !important;
+    -moz-border-radius: 15px !important;
+    -ms-border-radius: 15px !important;
+    -o-border-radius: 15px !important;
     font-size: 23px;
-    padding: 10px !important;
-    border-radius: 12px !important;
-    -webkit-border-radius: 12px !important;
-    -moz-border-radius: 12px !important;
-    -ms-border-radius: 12px !important;
-    -o-border-radius: 12px !important;
 }
-.volunteering .number-container .text{
-border-right: 2px solid #088b8b;
-color: #088b8b;
+.volunteering select option:hover{
+    background-color: #088b8b;
 }
-
-.volunteering .number-container .number{
-color: #088b8b;
-}
-
+footer{
+    border-top:5px solid var(--blue-color);
+    display: flex;
+    align-items: center;
+    width:100%;
+    height:90px;
+    background-image: url(../images/data-page.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--blue-color);
+    padding: 2.4em 6em 1.8em;
+    }
   /* End Volunteering */

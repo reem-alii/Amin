@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Āmin</title>
-    <link rel="shortcut icon" href="images/logo1.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="images/logo.svg" type="image/x-icon">
     <!--Main Css File-->
     <link rel="stylesheet" href="css/adminUser.css">
     <link rel="stylesheet" href="css/style.css">
@@ -15,6 +15,10 @@
     <!-- js file  -->
     <script src="js/adminUser.js" defer></script>
     <script src="js/script.js" defer></script>
+
+
+        
+
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,10 +76,128 @@
         </div>
         </div>        
     </nav>
+    <h1 class="header">Admin Dashboard</h1>
+    <div class="adminInfo">
+            <h2>Data information</h2>
+        <div class="head-container">
+            <p>Windstorm and Flood</p>
+            <div class="details">
+                <p class="wind">Windstorm</p>
+                <p class="flood">Flood</p>
+            </div>
+        </div>
+        <div class="wind-container">
+            <table class="wind-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Temp.</th>
+                        <th>Pressure</th>
+                        <th>Precip- itattion</th>
+                        <th>Relative Humidity</th>
+                        <th>Wind Direction</th>
+                        <th>Wind gust speed</th>
+                        <th>Prediction</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach($windstorms as $windstorm)
+                    <tr>
+                        <td>{{$windstorm -> created_at -> format('j/n')}}</td>
+                        <td>{{$windstorm -> temperature}}</td>
+                        <td>{{$windstorm -> pressure}}</td>
+                        <td>{{$windstorm -> precipitation}}</td>
+                        <td>{{$windstorm -> relative_humidity}}</td>
+                        <td>{{$windstorm -> wind_direction}}</td>
+                        <td>{{$windstorm -> windgustspeed}}</td>
+                        <td>%45</td>
+                    </tr>
+                @endforeach   
+                </tbody>
+            </table>
+        </div>
+        <div class="flood-container">
+            <table class="flood-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>M1</th>
+                        <th>M2</th>
+                        <th>M3</th>
+                        <th>M4</th>
+                        <th>M5</th>
+                        <th>M6</th>
+                        <th>M7</th>
+                        <th>M8</th>
+                        <th>M9</th>
+                        <th>M10</th>
+                        <th>M11</th>
+                        <th>M12</th>
+                        <th>Prediction</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach($floods as $flood)
+                    <tr>
+                        <td>{{$flood -> created_at -> format('j/n')}}</td>
+                        <td>{{$flood -> JAN}}</td>
+                        <td>{{$flood -> FEB}}</td>
+                        <td>{{$flood -> MAR}}</td>
+                        <td>{{$flood -> APR}}</td>
+                        <td>{{$flood -> MAY}}</td>
+                        <td>{{$flood -> JUN}}</td>
+                        <td>{{$flood -> JUL}}</td>
+                        <td>{{$flood -> AUG}}</td>
+                        <td>{{$flood -> SEP}}</td>
+                        <td>{{$flood -> JAN}}</td>
+                        <td>{{$flood -> NOV}}</td>
+                        <td>{{$flood -> DECMB}}</td>
+                        <td>100%</td>
+                    </tr>
+                @endforeach  
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="boxs-container">
+        <div class="box">
+            <h3>{{$usersCount}}</h3>
+            <p>Registrations</p>
+            <div id="buton1" class="more-info" onclick="showPanel(0)">
+                <p>More Info</p>
+                <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="box">
+            <h3>{{$saveCount}}</h3>
+            <p>Safe</p>
+            <div id="buton2" class="more-info" onclick="showPanel(1)">
+                <p>More Info</p>
+                <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="box">
+            <h3>{{$emergencyCount}}</h3>
+            <p>Emergency</p>
+            <div id="buton3" class="more-info" onclick="showPanel(2)">
+                <p>More Info</p>
+                <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="box">
+            <h3>{{$volunteersCount}}</h3>
+            <p>Volunteer</p>
+            <div id="buton4" class="more-info" onclick="showPanel(3)">
+                <p>More Info</p>
+                <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
     <div class="tablesContainer">
+        <div class="container2">
         <div class="buttons">
             <div class="buttonContainer">
-                <button  onclick="showPanel(0)">All Users</button>
+                <button onclick="showPanel(0)">All Users</button>
                 <button onclick="showPanel(1)">Safe</button>
                 <button onclick="showPanel(2)">Emergency</button>
                 <button onclick="showPanel(3)">Volunteer</button>
@@ -305,12 +427,14 @@
         </form>
 
         </div>
-        <div style="padding-bottom: 85px;"></div>
+       
+        </div>
         <footer>
             <div>
             <p>Emergency number</p> 
             <span>19999</span>
             </div>
+            <p>All rights reserved.</p>
         </footer>
     </div>
 </body>

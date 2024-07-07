@@ -7,6 +7,8 @@
 import './bootstrap';
 import { createApp } from 'vue';
 
+require('alpinejs');
+
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready
@@ -15,8 +17,8 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+// import ExampleComponent from './components/ExampleComponent.vue';
+// app.component('example-component', ExampleComponent);
 
 /**
  * The following block of code may be used to automatically register your
@@ -37,3 +39,10 @@ app.component('example-component', ExampleComponent);
  */
 
 app.mount('#app');
+
+
+
+// window.Echo.private(`App.Models.User.${userId}`)
+//     .notification(function(data){
+//         alert(data.greeting)
+//     })

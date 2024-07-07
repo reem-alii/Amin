@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      @yield( 'title' );
-    <link rel="shortcut icon" href="{{asset('images/logo1.jpg')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('images/logo.svg')}}" type="image/x-icon">
     <!--Main Css File-->
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
@@ -13,10 +13,12 @@
     <link rel="stylesheet" href="{{asset('css/signupstyle.css')}}">
     <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
     <link rel="stylesheet" href="{{asset('css/volunteering.css')}}">
+    <link rel="stylesheet" href="{{asset('css/adminUser.css')}}">
     <!-- js file  -->
     <script src="{{asset('js/login.js')}}" defer></script>
     <script src="{{asset('js/script.js')}}" defer></script>
     <script src="{{asset('js/signup.js')}}" defer></script>
+    <script src="{{asset('js/adminUser.js')}}" defer></script>
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
