@@ -11,7 +11,7 @@ const nav = document.querySelector(".nav"),
 //variables for profile page
 let profileImg = document.querySelector(".account-details .image-div img"),
   userFile = document.querySelector(".account-details .userfile");
-let token = 0; //token=1 if submitting or login
+//let token = 0; //token=1 if submitting or login
 let userIconClick = 0;
 
 //functions for nav bar
@@ -34,11 +34,11 @@ navCloseBtn.addEventListener("click", () => {
 });
 
 linksOpenBtn.addEventListener("click", () => {
-  if (token == 1 && userIconClick == 0) {
+  if ( userIconClick == 0) {
     userBox.classList.add("showAfter");
     userIconClick = 1;
     linksOpenBtn.classList.replace("fa-user", "fa-xmark");
-  } else if (userIconClick == 0 && token == 0) {
+  } else if (userIconClick == 0 ) {
     userBox.classList.add("showBefore");
     userIconClick = 1;
     linksOpenBtn.classList.replace("fa-user", "fa-xmark");
