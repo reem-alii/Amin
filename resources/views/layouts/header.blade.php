@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     @yield( 'title' );
-    <link rel="shortcut icon" href="{{asset('images/logo1.jpg')}}" type="image/x-icon">
+    <title>@yield("title")</title>
+    <link rel="shortcut icon" href="{{asset('images/logo.svg')}}" type="image/x-icon">
     <!--Main Css File-->
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/loginstyle.css')}}">
     <link rel="stylesheet" href="{{asset('css/main-style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/weather.css')}}">
+    <link rel="stylesheet" href="{{asset('css/loginstyle.css')}}">
     <link rel="stylesheet" href="{{asset('css/signupstyle.css')}}">
-    <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
     <link rel="stylesheet" href="{{asset('css/volunteering.css')}}">
+    <!--Normalize ALL Elements-->
+    <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
+    <!--Font Awesome Library-->
+    <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
     <!-- js file  -->
-    <script src="{{asset('js/login.js')}}" defer></script>
     <script src="{{asset('js/script.js')}}" defer></script>
+    <script src="{{asset('js/weather api.js')}}" defer></script>
+    <script src="{{asset('js/login.js')}}" defer></script>
     <script src="{{asset('js/signup.js')}}" defer></script>
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,10 +36,12 @@
             <ul class="nav-links">
                 <i class="fa-solid fa-xmark navCloseBtn"></i>
                 <li><a href="{{url('/home')}}" class="active">Home</a></li>
-                <li><a href="weather">Weather</a></li>
+                <li><a id="w-link" href="#weathe">Weather</a></li>
                 <li><a href="volunteering.html">Volunteering</a></li>
                 <li><a href="instruction.html" >Instructions</a></li>
-                
+                <!-- <li><a href="adminUser.html" >Admin</a></li>
+                <li><a href="adminPro.html" >Admin Pro</a></li>
+                <li><a href="profile.html">Profile</a></li> -->
             </ul>
         </div>
         <div class="icons">
@@ -47,27 +53,23 @@
         <div class="user-box">
             <i class="fa-solid fa-user user-icon" id="open-icon"></i>
             <ul class="user-links1">
+                @if (Auth::check())
+                    <li><a href="/profile">Edit Profile</a></li>
+                    <li><a href="/logout">Logout</a></li>
 
-            @if (Auth::check())
-              <li><a href="/profile">Profile</a></li>
-              <li><a href="/logout">Logout</a></li>
-
-            @else
-                <li><a href="/register">Sign up</a></li>
-                <li><a href="/login">Login</a></li>
-            @endif
-
-               <!-- <li><a href="/register">Sign up</a></li>
-                <li><a href="/login">Login</a></li>-->
-            </ul>
-            <ul class="user-links2">
-            <li><a href="profile.html">Edit Profile</a></li>
-            <li><a href="" id="signout">Sign Out</a></li>
+                @else
+                    <li><a href="/register">Sign up</a></li>
+                    <li><a href="/login">Login</a></li>
+                @endif
             </ul>
         </div>
-        </div>  
-       
-    </nav>
-    
-@yield('content');
+        </div>         
+        @if ( (Auth::check()) && ($predict_flood >= 50.0 || $predict_windstorm > 50.0))
+        <div class="anchor">  
+            <button class="green-btn">SAFE</button>
+            <button class="red-btn">EMERGENCY</button>  
+        </div>
+         @endif  
+    </nav> 
+@yield('content')
 

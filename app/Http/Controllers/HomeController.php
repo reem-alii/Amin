@@ -11,7 +11,7 @@ class HomeController extends Controller
 {
 
 
-    public function getdata(Request $request)
+    public static function getdata()
     {   
 
         $i = 1;
@@ -20,7 +20,7 @@ class HomeController extends Controller
         while (true) {
             $currentMinutes = date('i');
 
-            if ($currentMinutes == '49') {
+            if ($currentMinutes == '12') {
                 $i++;
 
                 if ($i > 3) {
@@ -57,7 +57,7 @@ class HomeController extends Controller
 
             $currentMinutes = date('i');
 
-            if ($currentMinutes == '49') {
+            if ($currentMinutes == '12') {
                 $j++;
 
                 if ($j > 3) {

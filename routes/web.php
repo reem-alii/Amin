@@ -26,10 +26,10 @@ Route::get('/', function () {
 Auth::routes(['verify'=>true]);
 
 Route::get("/logout",[LoginController::class,'logout']);
-
 Route::get("/profile",[ProfileController::class,'index'])->middleware('verified');
 Route::get("/",[HomeController::class,'getdata']);
 Route::get("/home",[HomeController::class,'getdata']);
+Route::get("/email/verify",[RegisterController::class,'verify'])->name('email.verify');
 
 
 

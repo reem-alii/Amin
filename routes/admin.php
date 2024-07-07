@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\admin\AdminHomeController;
+use App\Http\Controllers\admin\AdminDashboardController;
 use App\Http\Controllers\admin\auth\AdminLoginController;
 
 
@@ -27,7 +28,9 @@ Route::get('admin/login',[AdminLoginController::class,'login'])->name('admin.log
 
 Route::post('admin/login',[AdminLoginController::class,'check'])->name('admin.check');
 
+Route::get('admin/dashboard',[AdminDashboardController::class,'index'])->name('admin.dashboard');
 
+Route::get('admin/send',[AdminDashboardController::class,'sendPushNotificationToAllUsers'])->name('admin.send');
 
 
 

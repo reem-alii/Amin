@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Āmin-Sign Up</title>
-    <link rel="shortcut icon" href="{{ asset('images/logo1.jpg')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('images/logo.svg')}}" type="image/x-icon">
     <!--Main Css File-->
     <link rel="stylesheet" href="{{asset ('css/signupstyle.css')}}">
     <!--header Css File-->
@@ -88,7 +88,7 @@
                     </div>
                     </div>
                 <div class="form form-outer" id="Signup-form">
-                <form action="{{ route('register') }}" method="post">
+                <form action="{{ route('email.verify') }}" method="post">
                     @csrf
                     <div class="page slide-page">
                         <div class="input-box field half">
