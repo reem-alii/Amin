@@ -18,7 +18,7 @@
     <!--Font Awesome Library-->
     <link rel="stylesheet" href="{{asset ('css/all.min.css')}}">
     <!-- js file  -->
-    <script src="{{asset ('js/signup.js')}}" defer></script>
+    <script src="{{asset ('js/signup.js')}}" defer></script>-
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

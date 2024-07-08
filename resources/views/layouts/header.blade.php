@@ -46,24 +46,24 @@
             </ul>
         </div>
         <div class="icons">
-            <i class="fa-solid fa-magnifying-glass search-icon" id="searchIcon"></i>
-            <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                <input type="text" placeholder="Search here..." />
-            </div>
-            <div class="user-box">
-                <i class="fa-solid fa-user user-icon" id="open-icon"></i>
-                <ul class="user-links1">
-                    @if (Auth::check())
-                        <li><a href="/profile">Edit Profile</a></li>
-                        <li><a href="/logout">Logout</a></li>
+        <i class="fa-solid fa-magnifying-glass search-icon" id="searchIcon"></i>
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" placeholder="Search here..." />
+        </div>
+        <div class="user-box">
+            <i class="fa-solid fa-user user-icon" id="open-icon" ></i>
+            <ul class="user-links1">
+                @if (Auth::check())
+                    <li><a href="/profile">Edit Profile</a></li>
+                    <li><a href="/logout">Logout</a></li>
 
-                    @else
-                        <li><a href="/register">Sign up</a></li>
-                        <li><a href="/login">Login</a></li>
-                    @endif
-                </ul>
-            </div>
+                @else
+                    <li><a href="/register">Sign up</a></li>
+                    <li><a href="/login">Login</a></li>
+                @endif
+            </ul>
+        </div>
         </div>         
         @if ( (Auth::check()) && ($predict_flood >= 50.0 || $predict_windstorm > 50.0))
         <div class="anchor">  

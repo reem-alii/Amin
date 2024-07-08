@@ -24,7 +24,7 @@ submitBtn.addEventListener("click", function () {
   progressCheck[current - 1].classList.add("active1");
   current += 1;
   setTimeout(function () {
-    window.location.href="/home";
+    window.location.href="/email/verify";
   }, 300);
   
 });
