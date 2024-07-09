@@ -39,7 +39,7 @@
                 <li><a href="{{url('/home')}}" class="active">Home</a></li>
                 <li><a id="w-link" href="#weathe">Weather</a></li>
                 <li><a href="volunteering.html">Volunteering</a></li>
-                <li><a href="instruction.html" >Instructions</a></li>
+                <li><a href="{{route('instructions.index')}}" class="active">Instructions</a></li>
                 <!-- <li><a href="adminUser.html" >Admin</a></li>
                 <li><a href="adminPro.html" >Admin Pro</a></li>
                 <li><a href="profile.html">Profile</a></li> -->
@@ -81,7 +81,6 @@
 
         </div>
          @endif  
-         
     </nav> 
 @yield('content')
 

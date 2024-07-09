@@ -14,6 +14,67 @@
     -ms-border-radius: 60px;
     -o-border-radius: 60px;
 }
+/*Notification for location*/
+/* Notification style  */
+.hidden-c{
+    display: none;
+}
+
+#notification-container-c{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color:#088b8b;
+    color: white;
+    font-family: var(--font-family);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #067777;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: appearFromTop 1s ease-out forwards;
+    z-index: 2000;
+    -webkit-transform: translateX(-50px);
+    -moz-transform: translateX(-50px);
+    -ms-transform: translateX(-50px);
+    -o-transform: translateX(-50px);
+    -webkit-animation: appearFromTop 1s ease-out forwards;
+}
+@keyframes appearFromTop {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+        -webkit-transform: translateX(-50px);
+        -moz-transform: translateX(-50px);
+        -ms-transform: translateX(-50px);
+        -o-transform: translateX(-50px);
+}
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+}
+}
+  #notification-c{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  #close-notification-c{
+    background: none;
+    color: white;
+    cursor: pointer;
+    font-size:20px;
+    margin-left: 10px;
+  }
 /* Left weather section*/
 .start{
     display: flex;

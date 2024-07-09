@@ -1,3 +1,50 @@
+// geolocation code
+let latitude=37.77493000;
+let longitude=-122.41942000;
+function showNotification(message) {
+    const notificationContainer = document.getElementById('notification-container-c');
+    const notificationMessage = document.getElementById('notification-message-c');
+    notificationMessage.textContent = message;
+    notificationContainer.classList.remove('hidden-c');
+}
+  //  hide custom notification
+function hideNotification() {
+    const notificationContainer = document.getElementById('notification-container-c');
+    notificationContainer.classList.add('hidden-c');
+}
+  //  close the notification
+document.getElementById('close-notification-c').addEventListener('click', hideNotification);
+
+  // Check if geolocation is available
+    if ("geolocation" in navigator) {
+    navigator.geolocation.watchPosition(function(position) {
+        console.log(latitude,longitude);
+        latitude = position.coords.latitude;
+        longitude = position.coords.longitude;
+    }, function(error) {
+      // Handle permission denied error
+    if (error.code === error.PERMISSION_DENIED) {
+        console.error("User denied the request for Geolocation.");
+        // Display a custom notification to the user
+        showNotification("Allow location access for accurate weather updates. Otherwise, the forecast will default to San Francisco.");
+    } else {
+        // Handle other errors
+    switch(error.code) {
+        case error.POSITION_UNAVAILABLE:
+            console.error("Location information is unavailable.");
+            break;
+        case error.TIMEOUT:
+            console.error("The request to get user location timed out.");
+            break;
+        case error.UNKNOWN_ERROR:
+            console.error("An unknown error occurred.");
+            break;
+        }
+    }
+    });
+} else {
+    console.error("Geolocation is not supported by this browser.");
+}
 
 // Fetching the api response
 async function weatherBalloon(lat, lon) {
@@ -17,7 +64,7 @@ async function weatherBalloon(lat, lon) {
 }
 // Calling the function with correct city coordinates
 window.onload = function() {
-    weatherBalloon(37.77493000, -122.41942000);
+    weatherBalloon(latitude, longitude);
 }
 // Function to round up the temperatures
 // NOTE: Only works for small numbers

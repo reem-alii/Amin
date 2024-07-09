@@ -1,9 +1,14 @@
-
 @extends('layouts/header')
 @section("title") Āmin-Home @stop
 @section ('content')
 
-
+    <!-- Notification -->
+        <div id="notification-container-c" class="hidden-c">
+            <div id="notification-c" class="notification-c">
+            <span id="notification-message-c"></span>
+            <i id="close-notification-c" class="fa-solid fa-xmark"></i>
+            </div>
+        </div>
     <!-- Home -->
         <section class="home">
             <div>
@@ -162,7 +167,7 @@
                         lack of time that hinders survival from such an incident.</li>
                     <li>Leave flat areas that are vulnerable to hurricane waves.</li>
                 </ol>
-                <div><a href="instruction.html"><button class="green-btn"> For More</button></a></div>
+                <div><a href="/instructions"><button class="green-btn"> For More</button></a></div>
             </div>
         </section>
         <footer class="footer">
@@ -171,6 +176,7 @@
                 <p>All rights reserved.</p>
             </div>
         </footer>
+       
     </body>
 @endsection
 
