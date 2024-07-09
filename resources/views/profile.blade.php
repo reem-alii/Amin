@@ -1,12 +1,43 @@
 @extends('layouts/header')
 @section('title', 'Home')
 @section('content')
+
     <div class="Pmain-buttons">
         <button type="button" class="safe-btn">SAFE</button>
         <button type="button" class="emergency-btn">Emergency</button>
     </div>
+    <nav class="nav">
+        <div class="main-nav">
+            <i class="fa-solid fa-bars navOpenBtn"></i>
+            <a href="#" class="logo">                    
+                <img  src="{{asset('images/main-logo.svg')}}" alt="#">
+            </a>
+            <ul class="nav-links">
+                <i class="fa-solid fa-xmark navCloseBtn"></i>
+                <li><a href="{{url('/home')}}">Home</a></li>
+                //<li><a href="index.html#weather">Weather</a></li>
+                //<li><a href="volunteering.html">Volunteering</a></li>
+                //<li><a href="instruction.html" >Instructions</a></li>
+            </ul>
+        </div>
+        <div class="icons">
+        <i class="fa-solid fa-magnifying-glass search-icon" id="searchIcon"></i>
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" placeholder="Search here..." />
+        </div>
+        <div class="user-box">
+            <i class="fa-solid fa-user user-icon" id="open-icon"></i>
+            <ul class="user-links2">
+            <li><a href="{{url('/home')}}">Edit Profile</a></li>
+            <li><a href="{{url('/logout')}}" id="signout">Sign Out</a></li>
+            </ul>
+        </div>
+    </div>        
+    </nav>
     <section class="account-details">
         <h1>Account Details</h1>
+
         <div class="form" id="Profile-form">
             <form action="{{ route('updateProfile', $user->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
@@ -36,6 +67,10 @@
                 <div class="input-box field">
                     <label for="age">Age</label>
                     <input type="number" name="age" value="{{ $user->age }}" placeholder="25" id="age" />
+                </div>
+                <div class="input-box field">
+                    <label for="id-num">ID Number</label>
+                    <input type="number" name="id-num" placeholder="27348290081" id="id-num" />
                 </div>
                 <div class="input-box field">
                     <label for="email">Email</label>
@@ -69,9 +104,12 @@
                 </div>
             </form>
             <footer>
-                <p>Emergency number</p>
-                <span>19999</span>
-            </footer>
+                <div> 
+                        <p>Emergency number</p> 
+                        <span>19999</span>
+                </div>
+                    <p> All rights reserved.</p> 
+                </footer>
         </div>
     </section>
     </body>

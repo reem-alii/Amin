@@ -7,10 +7,13 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $user = auth()->user();
-        return view('profile', compact('user'));
+        $result = HomeController::getdata($request);
+        $predictFlood = $result['predict_flood'];
+        $predictWindstorm = $result['predict_windstorm'];
+        return view('profile', compact('user'),['predict_flood' => $predictFlood , 'predict_windstorm' => $predictWindstorm]);
     }
 
     public function update(Request $request, $id)
@@ -31,4 +34,5 @@ class ProfileController extends Controller
         }
         return $path;
     }
+    
 }

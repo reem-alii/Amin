@@ -27,12 +27,13 @@ Route::get('/', function () {
 
 Auth::routes(['verify'=>true]);
 
-Route::get("/profile", [ProfileController::class, 'index']);
+//Route::get("/profile", [ProfileController::class, 'index']);
 Route::put("/update/profile/{id}", [ProfileController::class, 'update'])->name("updateProfile");
-Route::get("/home", [HomeController::class, 'index']);
+//Route::get("/home", [HomeController::class, 'index']);
 //Route::get("/instruction", [InstructionController::class, 'index']);
 //Route::get("/volunteering", [VolunteeringController::class, 'index']);
 Route::get("/logout", [LoginController::class, 'logout']);
-Route::get("/profilee",[ProfileController::class,'index'])->middleware('verified');
-Route::get("/e",[HomeController::class,'getdata']);
-Route::get("/homee",[HomeController::class,'getdata']);
+Route::get("/profile",[ProfileController::class,'index'])->middleware('verified');
+Route::get("/",[HomeController::class,'getdata']);
+Route::get("/home",[HomeController::class,'getdata']);
+Route::post('/update-user-state', [HomeController::class,'getdata'])->name('update-user-state');

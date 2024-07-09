@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      @yield( 'title' );
-    <link rel="shortcut icon" href="{{asset('images/logo1.jpg')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('images/logo.svg')}}" type="image/x-icon">
     <!--Main Css File-->
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
@@ -21,6 +21,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Āmin</title>
+    <link rel="shortcut icon" href="{{asset('images/logo.svg')}}" type="image/x-icon">
+    <!--Main Css File-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--Normalize ALL Elements-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!--Font Awesome Library-->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- js file  -->
+    <script src="js/script.js" defer></script>
+    
 </head>
 <body>
     <nav class="nav">

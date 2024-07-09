@@ -4,14 +4,16 @@ const nav = document.querySelector(".nav"),
   navOpenBtn = document.querySelector(".navOpenBtn"),
   navCloseBtn = document.querySelector(".navCloseBtn"),
   linksOpenBtn = document.querySelector("#open-icon"),
-  userBox = document.querySelector(".user-box"),
-  //variables for confirmed password
-  password = document.getElementById("password2"),
-  confirm_password = document.getElementById("confirm_password");
+  userBox = document.querySelector(".user-box");
+ 
+
+
+
 //variables for profile page
 let profileImg = document.querySelector(".account-details .image-div img"),
   userFile = document.querySelector(".account-details .userfile");
-let token = 0; //token=1 if submitting or login
+let token=0;
+//export {token};//token=1 if submitting or login
 let userIconClick = 0;
 
 //functions for nav bar
@@ -33,8 +35,9 @@ navCloseBtn.addEventListener("click", () => {
   nav.classList.remove("openNav");
 });
 
+
 linksOpenBtn.addEventListener("click", () => {
-  if (token == 1 && userIconClick == 0) {
+  if (token==1 && userIconClick == 0) {
     userBox.classList.add("showAfter");
     userIconClick = 1;
     linksOpenBtn.classList.replace("fa-user", "fa-xmark");
@@ -50,19 +53,36 @@ linksOpenBtn.addEventListener("click", () => {
   }
 });
 
-//functions for confirmed password
+//Go to Weather section
+const weather=document.querySelector("#main-weather");
+const navoffset=nav.offsetHeight;
+const weatherPosition=weather.getBoundingClientRect().top;
+const offsetPosition = weatherPosition + window.pageYOffset -  navoffset ;
+const wLink=document.getElementById("w-link");
 
-function validatePassword() {
-  if (password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Passwords Don't Match");
-  } else {
-    confirm_password.setCustomValidity("");
-  }
+wLink.addEventListener("click", () => {
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: 'smooth'
+});
+});
+
+//statistics chart 
+function updatePieChart(chartId) {
+  const pieChart = document.getElementById(chartId);
+  const percentage = pieChart.getAttribute('data-percentage');
+  pieChart.style.setProperty('--p', percentage);
 }
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
+
+document.addEventListener('DOMContentLoaded', () => {
+  updatePieChart('pieChart1');
+  updatePieChart('pieChart2');
+});
+
 
 //Profile picture
 userFile.onchange = function () {
   profileImg.src = URL.createObjectURL(userFile.files[0]);
 };
+
+
