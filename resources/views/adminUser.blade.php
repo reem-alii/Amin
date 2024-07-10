@@ -1,3 +1,7 @@
+<?php
+// header("Refresh: 5;");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +37,7 @@
             </a>
             <ul class="nav-links">
                 <i class="fa-solid fa-xmark navCloseBtn"></i>
-                <li><a href="{{url('/home')}}">Home</a></li>
+                <li><a href="{{url('/')}}">Home</a></li>
                 <li><a href="index.html#weather">Weather</a></li>
                 <li><a href="{{route('volunteering.create')}}">Volunteering</a></li>
                 <li><a href="{{route('instructions.index')}}" >Instructions</a></li>
@@ -103,14 +107,14 @@
                 <tbody>
                 @foreach($windstorms as $windstorm)
                     <tr>
-                        <td>{{$windstorm -> created_at -> format('j/n')}}</td>
+                        <td>{{$windstorm -> date}}</td>
                         <td>{{$windstorm -> temperature}}</td>
                         <td>{{$windstorm -> pressure}}</td>
                         <td>{{$windstorm -> precipitation}}</td>
                         <td>{{$windstorm -> relative_humidity}}</td>
                         <td>{{$windstorm -> wind_direction}}</td>
                         <td>{{$windstorm -> windgustspeed}}</td>
-                        <td>%45</td>
+                        <td>{{$windstorm -> windstorm_pred}}%</td>
                     </tr>
                 @endforeach   
                 </tbody>
@@ -139,7 +143,7 @@
                 <tbody>
                 @foreach($floods as $flood)
                     <tr>
-                        <td>{{$flood -> created_at -> format('j/n')}}</td>
+                        <td>{{$flood -> date }}</td>
                         <td>{{$flood -> JAN}}</td>
                         <td>{{$flood -> FEB}}</td>
                         <td>{{$flood -> MAR}}</td>
@@ -152,7 +156,7 @@
                         <td>{{$flood -> JAN}}</td>
                         <td>{{$flood -> NOV}}</td>
                         <td>{{$flood -> DECMB}}</td>
-                        <td>100%</td>
+                        <td>{{$flood -> flood_Pred}}%</td>
                     </tr>
                 @endforeach  
                 </tbody>
@@ -243,8 +247,8 @@
                                 <td>{{$user -> age}}</td><!--age-->
                                 <td>{{$user -> blood_type}}</td><!--blood type-->
                                 <td>
-                                @if($user-> state== "1") Save
-                                @elseif($user-> state== "0" )  Not Save  
+                                @if($user-> state== "safe") Safe
+                                @elseif($user-> state== "emergency" )  Not Safe  
                                 @elseif($user-> state==NULL) None @endif
                                 </td><!--state -->
                                 <td>{{$user -> phone_number}}</td><!--phone-->
@@ -283,7 +287,7 @@
                     </thead>
                     <tbody>
                     @foreach($users as $user)
-                    @if($user -> state == "1")
+                    @if($user -> state == "safe")
                         <tr>
                             <td></td>
                             <td>
@@ -296,8 +300,8 @@
                             <td>{{$user -> age}}</td><!--age-->
                             <td>{{$user -> blood_type}}</td><!--blood type-->
                             <td>
-                                @if($user-> state== "1") Save
-                                @elseif($user-> state== "0" )  Not Save  
+                                @if($user-> state== "safe") Safe
+                                @elseif($user-> state== "emergency" )  Not Safe  
                                 @elseif($user-> state==NULL) None @endif
                             </td><!--state -->
                             <td>{{$user -> phone_number}}</td><!--phone-->
@@ -337,7 +341,7 @@
                     </thead>
                     <tbody>
                     @foreach($users as $user)
-                    @if($user -> state == "0" )
+                    @if($user -> state == "emergency" )
                         <tr>
                             <td></td>
                             <td>
@@ -350,8 +354,8 @@
                             <td>{{$user -> age}}</td><!--age-->
                             <td>{{$user -> blood_type}}</td><!--blood type-->
                             <td>
-                                @if($user-> state== "1") Save
-                                @elseif($user-> state== "0" )  Not Save  
+                                @if($user-> state== "safe") Safe
+                                @elseif($user-> state== "emergency" )  Not Safe  
                                 @elseif($user-> state==NULL) None @endif
                             </td><!--state -->
                             <td>{{$user -> phone_number}}</td><!--phone-->

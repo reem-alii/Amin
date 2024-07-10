@@ -1,75 +1,73 @@
 :root{
     --emergency-red:#cb2b2b;
     --blue-color:#088a8a;
+    --p1: 50; 
+    --p2: 50;
 }
 /* Global */
 /* Button Styling */
 .green-btn{
+    font-weight: 500;
     height: 4em;
     width: 200px;
     margin: 0;
     border: none;
     border-radius: 8px;
-    /* background-image:url(../images/button-1.png) ;
-    background-size: cover; */
-    background: linear-gradient(to right, #057a7a 50%, var(--blue-color) 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
+    background: url("../images/button-1.png") no-repeat center;
+    background-size: 120% 100%;
     color: var(--white-color);
     font-size: 1.5em;
-    transition: all .2s ease-out;
-    -webkit-transition: all .2s ease-out;
-    -moz-transition: all .2s ease-out;
-    -ms-transition: all .2s ease-out;
-    -o-transition: all .2s ease-out;
+    transition: all 0.25s ease-out;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -ms-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     -ms-border-radius: 8px;
     -o-border-radius: 8px;
 }
 .red-btn{
+    font-weight: 500;
     height: 4em;
     width: 200px;
     padding: 1em;
     margin: 0;
     border: none;
     border-radius: 8px;
-    /* background-image:url(../images/button-2.png) ;
-    background-size: cover; */
-    background: linear-gradient(to right, #bb1d25 50%, var(--emergency-red) 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
+    background: url("../images/button-2.png") no-repeat center;
+    background-size: 120% 100%;
     color: var(--white-color);
     font-size: 1.5em;
-    transition: all .2s ease-out;
-    -webkit-transition: all .2s ease-out;
-    -moz-transition: all .2s ease-out;
-    -ms-transition: all .2s ease-out;
-    -o-transition: all .2s ease-out;
+    transition: all .25s ease-out;
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     -ms-border-radius: 8px;
     -o-border-radius: 8px;
 }
 .green-btn:hover, .red-btn:hover{
-    background-position: left bottom;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     cursor:pointer;
+    font-weight: 600;
 }
 .anchor{
     display: flex;
-    flex-direction: row;
-    position: fixed;
-    top: 100px;
+    flex-flow: row wrap;
+    position: absolute;
+    top: 110px;
     left: 65%;
     width: 100%;
-    font-weight: normal;
     
 }
 /* Headers in-between pages */
 .primary-paragraph{
     min-height: 8em;
-    background: url("../images/pattern-1.png") no-repeat center;
-    background-size: cover;
+    /* background: url("../images/pattern-1.png") no-repeat center;
+    background-size: cover; */
 }
 .primary-paragraph p{
     font-size: 2em;
@@ -79,12 +77,19 @@
     line-height: 2em;
 }
 /* Header Backgrounds */
-.weather .primary-paragraph, .instructions .primary-paragraph, .footer .primary-paragraph{
+/* .weather .primary-paragraph, .instructions .primary-paragraph, 
+.footer .primary-paragraph{
     background: url("../images/pattern-2.png") no-repeat center;
     background-size: cover;
-    background-position-y: -950px;
-}
+    background-position-y: -400px;
+    background-position-y: -920px;
+} */
+
 /* Home section */
+body{
+    background: url("../images/home-page.png") no-repeat  center;
+    background-size: cover;
+}
 .home{
     height: 750px;
     display: flex;
@@ -94,13 +99,19 @@
     background: url("../images/home.png") no-repeat  center;
     background-size: cover;
     color: var(--white-color);
+    border-radius: 0 0 55px 55px;
+    -webkit-border-radius: 0 0 55px 55px;
+    -moz-border-radius: 0 0 55px 55px;
+    -ms-border-radius: 0 0 55px 55px;
+    -o-border-radius: 0 0 55px 55px;
+    overflow: hidden;
 }
 .home button, .instructions button{
     height: auto;
-    width: auto;
+    width: 7em;
     padding: 0.5em 1em;
     margin: 1.5em;
-    font-weight: 650;
+    font-weight: 600;
     font-size: 2em;
 }
 .home img{
@@ -109,40 +120,168 @@
 }
 .home p{
     font-size: 1.5em;
-    margin-top: 0.5em;
-}
-/* Weather Section */
-.weather-content{
-    height: 700px;
-    background: url("../images/weather.png") no-repeat center;
-    background-size: cover;
+    margin-top: 0.6em;
 }
 /* Statistics Section */
+/* Statistics Section */
 .stat-content{
-    height: 300px;
+    min-height: 520px;
     background: url("../images/statistics.png") no-repeat center;
     background-size: cover;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 14rem 0 14rem;
+    border-radius: 60px;
+    -webkit-border-radius: 60px;
+    -moz-border-radius: 60px;
+    -ms-border-radius: 60px;
+    -o-border-radius: 60px;
 }
+.stat-contain{
+    margin-top: 1.5rem;
+    padding: 30px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+.stat-contain .h3{
+    color: #f4f1e9;
+    background-color: var(--blue-color);
+    text-align: center;
+    border-radius: 12px;
+    min-height: 55px;
+    width: 295px;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+.stat-content .h3 h3{
+    font-weight: 600;
+}
+.chance{
+    min-height: 295px;
+    width: 295px;
+    background-color: #f4f1e9;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.2rem;
+    font-weight:400;
+    color: var(--blue-color);
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+.back{
+    background-color: #ede9dd;
+    border-radius: 50%;
+    padding: 8px;
+    scale: 1.2;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+@property --p{
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+    }
+
+    #pieChart1 {
+        --p: var(--p1);
+    }
+
+    #pieChart2 {
+        --p: var(--p2);
+    }
+    .pie {
+    --b:32px;
+    --c: var(--blue-color);
+    --w:175px;
+
+    width:var(--w);
+    aspect-ratio:1;
+    position:relative;
+    display:inline-grid;
+    margin:5px;
+    place-content:center;
+    
+    }
+    .pie:before,
+    .pie:after {
+    content:"";
+    position:absolute;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    -ms-border-radius:50%;
+    -o-border-radius:50%;
+}
+    .pie:before {
+    inset:0;
+    background:
+    conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+    mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+    }
+    
+    .animate {
+    animation:p 1s .5s both;
+    -webkit-animation:p 1s .5s both;
+}
+    .no-round:before {
+    background-size:0 0,auto;
+    }
+    .no-round:after {
+    content:none;
+    }
+    @keyframes p {
+    from{--p:0}
+    }
 /* Instructions Section*/
 .instruct-content{
     display: flex;
     flex-direction: column;
-    padding: 2em 4em;
     color: var(--white-color);
     background: url("../images/instructions.png") no-repeat center;
     background-size: cover;
+    border-radius: 55px 55px 0 0 ;
+    -webkit-border-radius: 55px 55px 0 0 ;
+    -moz-border-radius: 55px 55px 0 0 ;
+    -ms-border-radius: 55px 55px 0 0 ;
+    -o-border-radius: 55px 55px 0 0 ;
+    overflow: hidden;
+    margin-bottom: 45px;
 }
 .instruct-content ol{
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: start;
+    padding: 0em 5em;
+}
+.instruct-content h1{
+    padding: 3em 3em 1em 3em;
+    font-weight: 500;
 }
 ol li{
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 0 1.5rem;
-    line-height: 1.5em;
-    padding: 0.5em;
+    line-height: 2em;
+    padding-bottom: 1em;
+    font-weight: 4200;
 }
 .instruct-content div{
     display: flex;
@@ -150,7 +289,20 @@ ol li{
     align-items: center;
 }
 /* Footer */
+
+footer
+{
+    border-top: 5px solid var(--blue-color);
+}
+.footer .primary-paragraph{
+    min-height: 90px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em 5em;
+
+}
 .footer .primary-paragraph p{
     text-align: left;
-    font-size: 20px;
+    font-size: 23px;
+    font-weight: 400;
 }

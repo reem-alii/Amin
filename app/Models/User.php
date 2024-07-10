@@ -29,6 +29,7 @@ class User extends Authenticatable
         'country',
         'address',
         'phone_number',
+        'id_number',
     ];
 
 

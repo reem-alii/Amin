@@ -74,8 +74,17 @@
         </div>       
     </nav>
     <div class="Pmain-buttons">
-        <button type="button" class="safe-btn">SAFE</button>
-        <button type="button" class="emergency-btn">Emergency</button>
+    <form action="{{ route('update-user-state') }}" method="POST" class="safe-form">
+                @csrf <!-- CSRF token -->
+                <input type="hidden" name="state" value="safe"> <!-- للزر SAFE -->
+                <button type="submit" class="safe-btn">SAFE</button>
+            </form>
+
+            <form action="{{ route('update-user-state') }}" method="POST" class="emergency-form">
+                @csrf <!-- CSRF token -->
+                <input type="hidden" name="state" value="emergency"> <!-- للزر EMERGENCY -->
+                <button type="submit" class="emergency-btn">Emergency</button>
+            </form>
     </div>
     <main class="instruction">
         <section class="main-instruction">

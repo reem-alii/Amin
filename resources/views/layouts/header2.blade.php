@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/main-style.css')}}">
     <link rel="stylesheet" href="{{asset('css/weather.css')}}">
+    <link rel="stylesheet" href="{{asset('css/loginstyle.css')}}">
+    <link rel="stylesheet" href="{{asset('css/signupstyle.css')}}">
     <!--Normalize ALL Elements-->
     <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
     <!--Font Awesome Library-->
@@ -17,6 +19,8 @@
     <!-- js file  -->
     <script src="{{asset('js/script.js')}}" defer></script>
     <script src="{{asset('js/weather api.js')}}" defer></script>
+    <script src="{{asset('js/login.js')}}" defer></script>
+    <script src="{{asset('js/signup.js')}}" defer></script>
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,9 +35,13 @@
             </a>
             <ul class="nav-links">
                 <i class="fa-solid fa-xmark navCloseBtn"></i>
-                <li><a href="/programmer/home" class="active">Home</a></li>
+                <li><a href="{{url('/home')}}" class="active">Home</a></li>
                 <li><a id="w-link" href="#weathe">Weather</a></li>
-                <li><a href="/programmer/testmodel" >Test Model</a></li>   
+                <li><a href="{{route('volunteering.create')}}">Volunteering</a></li>
+                <li><a href="{{route('instructions.index')}}" >Instructions</a></li>
+                <li><a href="{{route('adminUser.index')}}" >Admin</a></li>
+                <li><a href="{{route('programmer.home')}}" >Admin Pro</a></li>
+                <li><a href="{{url('/profile')}}">Profile</a></li>
             </ul>
         </div>
         <div class="icons">
@@ -43,17 +51,36 @@
             <input type="text" placeholder="Search here..." />
         </div>
         <div class="user-box">
-            <i class="fa-solid fa-user user-icon" id="open-icon"></i>
+            <i class="fa-solid fa-user user-icon" id="open-icon" ></i>
             <ul class="user-links1">
-                <li><a href="{{ route('programmer.logout') }}">Logout</a></li>
+                @if (Auth::check())
+                    <li><a href="/profile">Edit Profile</a></li>
+                    <li><a href="/logout">Logout</a></li>
+
+                @else
+                    <li><a href="/register">Sign up</a></li>
+                    <li><a href="/login">Login</a></li>
+                @endif
             </ul>
         </div>
-        </div>           
+        </div>         
+        @if ( (Auth::check()) && ($predict_flood >= 50.0 || $predict_windstorm > 50.0))
+        <div class="anchor">  
+            <form action="{{ route('update-user-state') }}" method="POST">
+                @csrf <!-- CSRF token -->
+                <input type="hidden" name="state" value="safe"> <!-- للزر SAFE -->
+                <button type="submit" class="green-btn">SAFE</button>
+            </form>
+
+            <form action="{{ route('update-user-state') }}" method="POST">
+                @csrf <!-- CSRF token -->
+                <input type="hidden" name="state" value="emergency"> <!-- للزر EMERGENCY -->
+                <button type="submit" class="red-btn">EMERGENCY</button>
+            </form>
+
+        </div>
+         @endif  
+         
     </nav> 
 @yield('content')
-
-
-
-
-
 

@@ -5,11 +5,7 @@ const nav = document.querySelector(".nav"),
   navCloseBtn = document.querySelector(".navCloseBtn"),
   linksOpenBtn = document.querySelector("#open-icon"),
   userBox = document.querySelector(".user-box");
-  const weather=document.querySelector("#main-weather");
-  const navoffset=nav.offsetHeight;
-  const weatherPosition=weather.getBoundingClientRect().top;
-  const offsetPosition = weatherPosition + window.pageYOffset -  navoffset ;
-  const wLink=document.getElementById("w-link");
+ 
 
 
 
@@ -57,12 +53,32 @@ linksOpenBtn.addEventListener("click", () => {
   }
 });
 
+//Go to Weather section
+const weather=document.querySelector("#main-weather");
+const navoffset=nav.offsetHeight;
+const weatherPosition=weather.getBoundingClientRect().top;
+const offsetPosition = weatherPosition + window.pageYOffset -  navoffset ;
+const wLink=document.getElementById("w-link");
+
 wLink.addEventListener("click", () => {
   window.scrollTo({
     top: offsetPosition,
     behavior: 'smooth'
 });
 });
+
+//statistics chart 
+function updatePieChart(chartId) {
+  const pieChart = document.getElementById(chartId);
+  const percentage = pieChart.getAttribute('data-percentage');
+  pieChart.style.setProperty('--p', percentage);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  updatePieChart('pieChart1');
+  updatePieChart('pieChart2');
+});
+
 
 //Profile picture
 userFile.onchange = function () {

@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Āmin-Sign Up</title>
-    <link rel="shortcut icon" href="{{ asset('images/logo1.jpg')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('images/logo.svg')}}" type="image/x-icon">
     <!--Main Css File-->
     <link rel="stylesheet" href="{{asset ('css/signupstyle.css')}}">
     <!--header Css File-->
@@ -18,7 +18,7 @@
     <!--Font Awesome Library-->
     <link rel="stylesheet" href="{{asset ('css/all.min.css')}}">
     <!-- js file  -->
-    <script src="{{asset ('js/signup.js')}}" defer></script>
+    <script src="{{asset ('js/signup.js')}}" defer></script>-
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,8 +88,19 @@
                     </div>
                     </div>
                 <div class="form form-outer" id="Signup-form">
+                     <!-- error handling -->
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                 <form action="{{ route('register') }}" method="post">
-                     @csrf
+                    @csrf
                     <div class="page slide-page">
                         <div class="input-box field half">
                             <div class="half-box">
@@ -121,21 +132,25 @@
                             @enderror
                         </div>
                         <div class="input-box field">
-                            <label for="email">Email</label>
-                            <input id="email" type="email" name="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                            <label for="id_number">ID Number</label>
+                            <input type="number" name="id_number" placeholder="Id Number" id="id_number" required />
                         </div>
                         <div class="field">
                             <button  class="firstNext next button ">Next</button>
                         </div>
-                        <div class="login-signup">Already have an account? <a href="/login" id="login">Login</a></div>
+                        <div class="login-signup">Or Login with <a href="/login" id="login">Email</a></div>
                     </div>
 
                     <div class="page">
+                    <div class="input-box field">
+                        <label for="email">Email</label>
+                        <input id="email" type="email" name="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
                     <div class="input-box field">
                             <label for="password">Password</label>
                             <input id="password" type="password" name="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
@@ -149,6 +164,14 @@
                             <label for="confirm_password">Confirm Password</label>
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
                         </div>
+                        <div class="field btns">
+                            <button class="prev-1 prev button">Previous</button>
+                            <button class="next-1 next button">Next</button>
+                        </div>
+                        <div class="login-signup">Or Login with <a href="/login" id="login">Email</a></div>
+                    </div>
+
+                    <div class="page">
                         <div class="input-box field half">
                             <div class="half-box">
                                 <label for="blood_type">Blood Type</label>
@@ -169,14 +192,6 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="field btns">
-                            <button class="prev-1 prev button">Previous</button>
-                            <button class="next-1 next button">Next</button>
-                        </div>
-                        
-                    </div>
-
-                    <div class="page">
                         <div class="field input-box">
                             <label for="address">Detailed address</label>
                             <input id="address" type="text" name="address"  class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus   placeholder="Detailed address" >
@@ -187,24 +202,23 @@
                                 @enderror
                         </div>
                         <div class="field input-box">
-                            <label for="phone_number">Phone number</label>
-                            <input id="phone_number" type="Number"  name="phone_number" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ old('phone_number') }}" required autocomplete="phone_number" autofocus   placeholder="+00 000 000 000" >
+                            <label for="number">Phone number</label>
+                            <input id="number" type="Number"  name="number" class="form-control @error('number') is-invalid @enderror" name="number" value="{{ old('number') }}" required autocomplete="number" autofocus   placeholder="+00 000 000 000" >
                                 @error('number')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                         </div>
-                       <!-- <div class="last-chek field">
-                            <input type="radio" name="last-chek" id="last-chek">
-                            <label for="last-chek">If you sure about registering , complete it.</label>
-                        </div>-->
+                        <label class="last-chek field">
+                            <input type="checkbox" name="last-chek" id="last-chek">
+                            <span class="radio-check"></span>
+                            If you sure about registering, complete it.
+                        </label>
                         <div class="field btns">
                             <button class="prev-2 prev button">Previous</button>
                             <button type="submit" class="Sign-Up button" id = 'Sign_Up_btn' >Sign Up</button>
                         </div>
-                       
-
                     </div>
                 
                 </form>

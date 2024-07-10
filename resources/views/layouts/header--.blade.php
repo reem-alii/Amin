@@ -1,26 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield("title")</title>
+     @yield( 'title' );
     <link rel="shortcut icon" href="{{asset('images/logo.svg')}}" type="image/x-icon">
     <!--Main Css File-->
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('css/main-style.css')}}">
-    <link rel="stylesheet" href="{{asset('css/weather.css')}}">
-    <link rel="stylesheet" href="{{asset('css/loginstyle.css')}}">
-    <link rel="stylesheet" href="{{asset('css/signupstyle.css')}}">
-    <!--Normalize ALL Elements-->
-    <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
-    <!--Font Awesome Library-->
     <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/loginstyle.css')}}">
+    <link rel="stylesheet" href="{{asset('css/main-style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/signupstyle.css')}}">
+    <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
+    <link rel="stylesheet" href="{{asset('css/volunteering.css')}}">
+    <link rel="stylesheet" href="{{asset('css/adminUser.css')}}">
     <!-- js file  -->
-    <script src="{{asset('js/script.js')}}" defer></script>
-    <script src="{{asset('js/weather api.js')}}" defer></script>
     <script src="{{asset('js/login.js')}}" defer></script>
+    <script src="{{asset('js/script.js')}}" defer></script>
     <script src="{{asset('js/signup.js')}}" defer></script>
+    <script src="{{asset('js/adminUser.js')}}" defer></script>
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,12 +34,12 @@
             <ul class="nav-links">
                 <i class="fa-solid fa-xmark navCloseBtn"></i>
                 <li><a href="{{url('/home')}}" class="active">Home</a></li>
-                <li><a id="w-link" href="#weathe">Weather</a></li>
+                <li><a href="weather">Weather</a></li>
                 <li><a href="{{route('volunteering.create')}}">Volunteering</a></li>
                 <li><a href="{{route('instructions.index')}}" >Instructions</a></li>
                 <li><a href="{{route('adminUser.index')}}" >Admin</a></li>
-                <li><a href="{{route('programmer.home')}}" >Admin Pro</a></li>
-                <li><a href="{{url('/profile')}}">Profile</a></li>
+                <li><a href="adminPro.html" >Admin Pro</a></li>
+                
             </ul>
         </div>
         <div class="icons">
@@ -51,33 +49,36 @@
             <input type="text" placeholder="Search here..." />
         </div>
         <div class="user-box">
-            <i class="fa-solid fa-user user-icon" id="open-icon" ></i>
+            <i class="fa-solid fa-user user-icon" id="open-icon"></i>
             <ul class="user-links1">
-                @if (Auth::check())
-                    <li><a href="/profile">Edit Profile</a></li>
-                    <li><a href="/logout">Logout</a></li>
 
-                @else
-                    <li><a href="/register">Sign up</a></li>
-                    <li><a href="/login">Login</a></li>
-                @endif
+            @if (Auth::check())
+              <li><a href="/profile">Profile</a></li>
+              <li><a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            log out</a></li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                            style="display: none;">
+                            @csrf
+                        </form>
+
+
+            @else
+                <li><a href="/register">Sign up</a></li>
+                <li><a href="/login">Login</a></li>
+            @endif
+
+               <!-- <li><a href="/register">Sign up</a></li>
+                <li><a href="/login">Login</a></li>-->
+            </ul>
+            <ul class="user-links2">
+            <li><a href="profile.html">Edit Profile</a></li>
+            <li><a href="" id="signout">Sign Out</a></li>
             </ul>
         </div>
-        </div>         
-  
-        <div class="anchor">  
-            <form action="{{ route('update-user-state') }}" method="POST">
-                @csrf <!-- CSRF token -->
-                <input type="hidden" name="state" value="safe"> <!-- للزر SAFE -->
-                <button type="submit" class="green-btn">SAFE</button>
-            </form>
+        </div>  
+       
+    </nav>
+    
+@yield('content');
 
-            <form action="{{ route('update-user-state') }}" method="POST">
-                @csrf <!-- CSRF token -->
-                <input type="hidden" name="state" value="emergency"> <!-- للزر EMERGENCY -->
-                <button type="submit" class="red-btn">EMERGENCY</button>
-            </form>
-
-        </div>
-    </nav> 
-@yield('content')

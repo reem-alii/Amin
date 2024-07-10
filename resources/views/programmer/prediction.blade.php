@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Models</title>
+    <link rel="shortcut icon" href="{{asset('images/logo.svg')}}" type="image/x-icon">
+    <!-- Bootstrap Utilities CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!--Normalize ALL Elements-->
+    <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
+    <!--Font Awesome Library-->
+    <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
+    <!--Main Css File-->
+    <link rel="stylesheet" href="{{asset('css/admin_pro.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <!-- js file  -->
+    <script src="{{asset('js/script.js')}}" defer></script>
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="main-nav">
+            <i class="fa-solid fa-bars navOpenBtn"></i>
+            <a href="#" class="logo">                    
+                <img  src="{{asset('images/main-logo.svg')}}" alt="#">
+            </a>
+            <ul class="nav-links">
+                <i class="fa-solid fa-xmark navCloseBtn"></i>
+                <li><a href="/programmer/home">Home</a></li>
+                <li><a href="/programmer/testmodel" class="active">Test Model</a></li>
+            </ul>
+        </div>
+        <div class="icons">
+        <i class="fa-solid fa-magnifying-glass search-icon" id="searchIcon"></i>
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" placeholder="Search here..." />
+        </div>
+        <div class="user-box">
+            <i class="fa-solid fa-user user-icon" id="open-icon"></i>
+            <ul class="user-links1">
+                <li><a href="{{ route('programmer.logout') }}">Logout</a></li>
+            </ul>
+        </div>
+        </div>        
+    </nav>
+    <main class="model-testing">
+        <div style="padding-bottom: 2.5rem !important;" class="container py-4">
+            <div style="padding-top: 20px; " class="head">
+                <h1 class="text-white-bone text-big fw-bold text-center">Model Testing</h1>
+            </div>
+            <div class="forms row justify-content-between">
+                <div class="windstorm  col-md-5 ">
+                    <h2 class="text-white-bone text-meduim fw-semi text-center p-3 mb-3">Windstorm</h2>
+                    <div class="inner bg-white-bone custom-p-3 rounded-4 mb-3">
+                        <div class="text-center fw-bold mb-3"></div>
+                        <form action="{{route('programmer.getWindstormPrediction')}}" method="post">
+                            <div class="form-group mb-3 d-flex justify-content-between ">
+                                <input class="form-control text-custom-color w-45" type="number" placeholder="Temperature" name="temperature" id="temperature">
+                                <input class="form-control text-custom-color w-45" type="number" placeholder="Relative Humidity" name="relativeHumidity"
+                                    id="relativeHumidity">
+                            </div>
+                            <div class="form-group mb-3 d-flex justify-content-between ">
+                                <input class="form-control text-custom-color w-45" type="number" placeholder="Pressure" name="pressure" id="pressure">
+                                <input class="form-control text-custom-color w-45" type="number" placeholder="Wind Direction" name="windDirection"
+                                    id="windDirection">
+                            </div>
+                            <div class="form-group mb-3 d-flex justify-content-between ">
+                                <input class="form-control text-custom-color w-45" type="number" placeholder="Precipitattion" name="precipitattion" id="precipitattion">
+                                <input class="form-control text-custom-color w-45" type="number" placeholder="Windgustspeed" name="windgustspeed"
+                                    id="windgustspeed">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="py-4 text-center">
+                        <a href="/programmer/getWindstormPrediction">
+                            <button id="btn-windstorm" class="px-4 py-2 fs-4 border-0 rounded-1">Test</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="flood col-md-5  ">
+                    <h2 class="text-white-bone text-meduim fw-semi p-3 mb-3 text-center custom">Flood</h2>
+                    <div class="inner bg-white-bone custom-p-3 rounded-4 mb-3">
+                        <div class="text-center fw-bold mb-3">
+                        </div>
+                        <form action="{{route('programmer.getPrediction')}}" method="post">
+                            <div class="form-group mb-3 d-flex  justify-content-between ">
+                                <input class="form-control text-custom-color w-24" type="text" name="jan" id="jan" placeholder="1'st_M">
+                                <input class="form-control text-custom-color w-24" type="text" name="APR" id="APR" placeholder="2'nd_M">
+                                <input class="form-control text-custom-color w-24" type="text" name="JUL" id="JUL" placeholder="3'rd_M">
+                                <input class="form-control text-custom-color w-24" type="text" name="OCT" id="OCT" placeholder="4'th_M">
+                            </div>
+                            <div class="form-group mb-3 d-flex  justify-content-between ">
+                                <input class="form-control text-custom-color w-24" type="text" name="FEB" id="FEB" placeholder="5'th_M">
+                                <input class="form-control text-custom-color w-24" type="text" name="MAY" id="MAY" placeholder="6'th_M">
+                                <input class="form-control text-custom-color w-24" type="text" name="AUG" id="AUG" placeholder="7'th_M">
+                                <input class="form-control text-custom-color w-24" type="text" name="NOV" id="NOV" placeholder="8'th_M">
+                            </div>
+                            <div class="form-group mb-3 d-flex  justify-content-between ">
+                                <input class="form-control text-custom-color w-24" type="text" name="MAR" id="MAR" placeholder="9'th_M">
+                                <input class="form-control text-custom-color w-24" type="text" name="JUN" id="JUN" placeholder="10'th_M">
+                                <input class="form-control text-custom-color w-24" type="text" name="SEP" id="SEP" placeholder="11'th_M">
+                                <input class="form-control text-custom-color w-24" type="text" name="DEC" id="DEC" placeholder="12'th_M">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="py-4 text-center">
+                        <a href="/programmer/getPrediction">
+                            <button id="btn-flood" class="px-4 py-2 fs-4  border-0 rounded-1">Test</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+            <div class="primary-paragraph">
+                <p>Emergency number |  19999</p>
+                <p>All rights reserved.</p>
+            </div>
+    </footer>
+    <div id="popup-flood" class="popup-flood d-block">
+        <div class="container d-flex justify-content-center align-items-center h-100">
+            <div class="child bg-white-bone position-relative  p-4 rounded-4">
+                <a href="/programmer/testmodel"><i id="floodExit" class="close fa-solid fa-xmark text-custom-color"></i></a>
+                <h3 class="mb-3 text-custom-color fw-semi fs-2" >Prediction</h3>
+                <div class="text-box text-center rounded-3  mx-auto">
+                    <p class="m-0 text-custom-color fw-semi">
+                       {{$predict_floods}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

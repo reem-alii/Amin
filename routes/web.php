@@ -5,6 +5,7 @@ use App\Http\Controllers\InstructionsController;
 use App\Http\Controllers\VolunteeringController;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\auth\LoginController;
+use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -25,11 +26,19 @@ Route::get('/', function () {
 });
 
 
-Auth::routes();
 
-Route::get("/profile",[ProfileController::class,'index']);
+Auth::routes(['verify'=>true]);
+
+
+// Route::get("/profile",[ProfileController::class,'index']);
+Route::get("/profile",[ProfileController::class,'index'])->middleware('verified');
 Route::post("/update/profile/{id}",[ProfileController::class,'update'])->name("updateProfile");
-Route::get("/home",[HomeController::class,'index']);
+
+
+Route::get("/",[HomeController::class,'getdata']);
+Route::get("/home",[HomeController::class,'getdata']);
+Route::post('/update-user-state', [HomeController::class,'getdata'])->name('update-user-state');
+
 // Route::get("/instruction",[InstructionController::class,'index']);
 Route::get('/instructions',[InstructionsController::class,'index'])->name('instructions.index');
 
@@ -41,10 +50,16 @@ Route::get('/update',[AdminUserController::class,'update'])->name('adminUser.upd
 Route::delete('/user/{user}',[AdminUserController::class,'destroy'])-> name('user.destroy');
 Route::delete('/volunteer/{vol}',[VolunteeringController::class,'destroy'])-> name('volunteer.destroy');
 Route::post('/sendAlarm',[AdminUserController::class,'sendAlarms'])-> name('send.alarms');
+// Route::redirect('/adminUser', '/sendAlarm');
 
 Route::get("/logout",[LoginController::class,'logout']);
+Route::post("/login",[RegisterController::class,'create'])->name('register.create');
 
 
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

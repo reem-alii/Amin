@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/main-style.css')}}">
     <link rel="stylesheet" href="{{asset('css/weather.css')}}">
+    <link rel="stylesheet" href="{{asset('css/loginstyle.css')}}">
+    <link rel="stylesheet" href="{{asset('css/signupstyle.css')}}">
     <!--Normalize ALL Elements-->
     <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
     <!--Font Awesome Library-->
@@ -17,6 +19,8 @@
     <!-- js file  -->
     <script src="{{asset('js/script.js')}}" defer></script>
     <script src="{{asset('js/weather api.js')}}" defer></script>
+    <script src="{{asset('js/login.js')}}" defer></script>
+    <script src="{{asset('js/signup.js')}}" defer></script>
     <!--Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

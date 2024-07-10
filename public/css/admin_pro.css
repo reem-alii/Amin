@@ -1,0 +1,206 @@
+
+/*Start Global Rules */
+:root {
+  --font-family: "Montserrat", sans-serif;
+  --blue-color: #088b8b;
+  --black-color: #000000;
+  --white-color: #ffffff;
+  --white-bone-color: #f5f2ea;
+  --main-transition:0.2s;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  font-family: var(--font-family);
+  background-image: url(../images/bg_admin-dash1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+/* End Global Rules */
+.nav{
+  box-shadow: 0 0 10px #066966 !important;
+}
+.a-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure the last element goes to the bottom */
+  height: 100vh; /* Full viewport height */
+}
+.model-testing{
+    margin-top: 100px;
+  }
+
+  .model-testing input::placeholder{
+    color: #088b8b82 !important;
+    text-align: center;
+  }
+  .model-testing .flood input{
+    border-radius: 5;
+    -webkit-border-radius: 5;
+    -moz-border-radius: 5;
+    -ms-border-radius: 5;
+    -o-border-radius: 5;
+}
+  .model-testing .flood input::placeholder{
+    color: #088b8b82 !important;
+    text-align: center;
+  }
+  .model-testing input{
+    border: 2px solid #088b8b6f !important;
+  }
+  
+  .model-testing input:focus{
+    box-shadow: none !important;
+    border: 2px solid #088b8b !important;
+  }
+  
+  .model-testing input{
+    background-color: transparent !important;
+  }
+  
+  .model-testing .w-45{
+    width: 48% !important;
+  }
+
+  .model-testing .w-24{
+    width: 22% !important;
+  }
+  .custom-p-3 {
+    padding: 1.4rem  !important;
+ }
+  .model-testing .windstorm input ,
+  .model-testing .flood input{
+    background-color: #088b8b1a !important;
+  }
+  
+  .model-testing .windstorm button,
+  .model-testing .flood button{
+    background-image: url("../images/test.jpg") !important;
+    background-size: cover;
+    background-position: center;
+    font-weight: 600;
+    color: #088b8b;
+  }
+  .model-testing .windstorm button:hover,
+  .model-testing .flood button:hover{
+  box-shadow:0 0 15px #066966;
+  font-weight: 700;
+}
+  .text-custom-color{
+    color: #088b8b !important;
+  }
+
+/* #modelFooter{
+      background-image: url('../images/instractions-page.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+      bottom: 0;
+  }
+  #modelFooter .number-container .text{
+    font-size: 20px;
+    border-right: 2px solid #088b8b;
+    color: #088b8b;
+}
+
+#modelFooter .number-container .number{
+    font-size: 20px;
+    color: #088b8b;
+}   */
+
+
+.popup-flood,
+.popup-windstorm{
+    position: fixed;
+    inset: 0;
+    background-color: #00000074;
+    z-index: 999;
+}
+  
+.popup-flood .child,
+.popup-windstorm .child{
+    min-width: 34% !important;
+    padding: 32px !important;
+    border-radius: 20px !important;
+    -webkit-border-radius: 20px !important;
+    -moz-border-radius: 20px !important;
+    -ms-border-radius: 20px !important;
+    -o-border-radius: 20px !important;
+}
+  
+.text-box{
+    background-color:#dce6df;
+    border: 1px solid #088b8b;
+    padding: 12px;
+    font-size: 20px;
+  }
+  
+.close{
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    cursor: pointer;
+    font-size: 30px;
+  }
+.text-big{
+  font-size: 58px;
+}
+.text-meduim{
+  font-size:40px;
+}
+.col-md-5{
+  width:48%;
+}
+.text-white-bone{
+  color:#f5f2ea ;
+}
+.bg-white-bone{
+  background-color: #f5f2ea;
+}
+.fw-semi{
+  font-weight: 600;
+}
+
+
+footer{
+  position: relative;
+  bottom: 0;
+  left: 0;
+  background-image: url(../images/data-page.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-top: 5px solid var(--blue-color);
+}
+.primary-paragraph{
+  height: 85px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 5em;
+  background: url("../images/pattern-1.png") no-repeat center;
+  background-size: cover;
+}
+.footer .primary-paragraph p{
+  padding: 1em 4em;
+  text-align: center;
+  color: var(--blue-color);
+  font-size: 22px;
+  font-weight: 400;
+}
+
+
+

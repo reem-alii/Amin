@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Āmin-Sign In</title>
-    <link rel="shortcut icon" href="{{ asset('images/logo1.jpg')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('images/logo.svg')}}" type="image/x-icon">
     <!--Main Css File-->
     <link rel="stylesheet" href="{{asset ('css/loginstyle.css')}}">
     <!--header Css File-->
@@ -87,18 +87,11 @@
                                     </span>
                             @enderror
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-md-0 offset-md-0">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                       
+                        <label class="form-check form-check-label" for="remember">
+                            <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                            <span class="checkmark"></span>
+                                {{ __('Remember Me') }}
+                        </label>                       
                         <button type="submit"  class="button">Login</button>
                     
                         @if (Route::has('password.request'))
