@@ -25,8 +25,8 @@ public function index() {
         $users=User::all();
         $volunteers=Volunteer::all();
         $users_count=User::count();
-        $save_count=User::where('state','=','1')->count();
-        $emergency_count=User::where('state','=','0')->count();
+        $save_count=User::where('state','=','safe')->count();
+        $emergency_count=User::where('state','=','emergency')->count();
         $vols_count=Volunteer::count();
 
         $windstorm_data=Windstorm::all();
