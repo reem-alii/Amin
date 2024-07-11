@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="{{asset('css/weather.css')}}">
     <link rel="stylesheet" href="{{asset('css/loginstyle.css')}}">
     <link rel="stylesheet" href="{{asset('css/signupstyle.css')}}">
-    <link rel="stylesheet" href="{{asset('css/volunteering.css')}}">
     <!--Normalize ALL Elements-->
     <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
     <!--Font Awesome Library-->

@@ -32,7 +32,7 @@
                 <i class="fa-solid fa-xmark navCloseBtn"></i>
                 <li><a href="{{url('/home')}}" class="active">Home</a></li>
                 <li><a id="w-link" href="#weathe">Weather</a></li>
-                <li><a href="volunteering.html">Volunteering</a></li>
+                <li><a href="{{route('volunteering.create')}}" class="active">Volunteering</a></li>
                 <li><a href="{{route('instructions.index')}}" class="active">Instructions</a></li>
             </ul>
         </div>
@@ -59,27 +59,19 @@
     </nav>
 
     @if ( (Auth::check()) && ($predict_flood >= 50.0 || $predict_windstorm > 50.0))
-        <div class="Pmain-buttons">  
-            <form action="{{ route('update-user-state') }}" method="POST">
-                @csrf 
-                <input type="hidden" name="state" value="safe"> 
-                <button type="submit" class="safe-btn">SAFE</button>
-            </form>
-
-            <form action="{{ route('update-user-state') }}" method="POST">
-                @csrf 
-                <input type="hidden" name="state" value="emergency"> 
-                <button type="submit" class="emergency-btn">Emergency</button>
-            </form>
-
-        </div>
+    <div class="Pmain-buttons">  
+        <form action="{{ route('update-user-state') }}" method="POST" class="safe-form">
+            @csrf 
+            <input type="hidden" name="state" value="safe"> 
+            <button type="submit" class="safe-btn">SAFE</button>
+        </form>
+        <form action="{{ route('update-user-state') }}" method="POST" class="emergency-form">
+            @csrf 
+            <input type="hidden" name="state" value="emergency"> 
+            <button type="submit" class="emergency-btn">Emergency</button>
+        </form>
+    </div>
     @endif 
-
-
-    <!-- <div class="Pmain-buttons">
-        <button type="button" class="safe-btn">SAFE</button>
-        <button type="button" class="emergency-btn">Emergency</button>
-    </div>--> 
 
     <main class="instruction">
         <section class="main-instruction">

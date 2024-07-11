@@ -315,11 +315,16 @@ a {
   -o-transform: translateX(-50%);
   z-index: 99;
 }
+.Pmain-buttons .safe-form,
+.Pmain-buttons .emergency-form
+{
+  width:50%;
+}
 .Pmain-buttons .safe-btn,
 .Pmain-buttons .emergency-btn{
   cursor: pointer;
-  width:50%;
   border: none;
+  width:100%;
   font-size: 26px;
   color:white;
   padding:22px 10px;

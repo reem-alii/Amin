@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Windstorm extends Model
 {
     use HasFactory;
-    protected $fillable = ['temperature', 'relative_humidity', 'pressure', 'wind_direction', 'precipitation', 'windgustspeed'];
+    protected $fillable = ['temperature', 'relative_humidity', 'pressure', 'wind_direction', 'precipitation', 'windgustspeed','windstorm_Pred','date1'];
 }

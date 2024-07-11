@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use GuzzleHttp\Client; 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use App\Notifications\Alarm;
+use Illuminate\Support\Facades\Notification;
+use App\Models\User;
 
 class HomeController extends Controller
 {
 
-
+   
     public static function getdata(Request $request)
     {   if(Auth::check())
         {
@@ -22,9 +24,11 @@ class HomeController extends Controller
             $user->save();
         }
         
-
+        $user=User::all();
         $i = 1;
         $j = 1;
+        $windstorm_flag=0;
+        $flood_flag=0;
 
         while (true) {
             $currentMinutes = date('i');
@@ -63,7 +67,9 @@ class HomeController extends Controller
             ]);
         
             $prediction = json_decode($response->getBody()->getContents());
-
+            if($prediction>=50.0) $flood_flag=1;
+                
+            
             $currentMinutes = date('i');
 
             if ($currentMinutes == '12') {
@@ -95,7 +101,39 @@ class HomeController extends Controller
             ]);
         
             $prediction1 = json_decode($response1->getBody()->getContents());
-            
+            if($prediction1>=50.0) $windstorm_flag=1;
+
+            if($flood_flag==1 ){
+                $f_details=[
+
+                        'greeting'=>'EMERGENCY ALERT❗',
+                        'body'=>"A Flooding warning has been issued, flood is about to occurre. For
+                                your safety, listen for instructions.If you are in the area, seek higher ground immediately.
+                                If you are at home, stay where you are.
+                                We will provide updates via Āmin website as we receive more information.",
+        
+                        'actionText'=>'Instructions to be Āmin',
+                        'actionUrl'=>"/",
+                        'lastLine'=>'We hope you all safe, ',
+                        
+                ];
+                Notification::sendNow($user, new Alarm($f_details));     
+        } 
+            if($windstorm_flag==1 ){  
+                $w_details=[
+        
+                        'greeting'=>'EMERGENCY ALERT❗',
+                        'body'=>"A tornado warning has been issued, windstorm  is about to occurre. For
+                                your safety, listen for instructions.Stay at safe area.
+                                We will provide updates via Āmin website as we receive more information.",
+                        'actionText'=>'Instructions to be Āmin',
+                        'actionUrl'=>"/",
+                        'lastLine'=>'We hope you all safe, ',
+                        
+                ];
+                Notification::sendNow($user, new Alarm($w_details));
+                }
+
             return view('home', ['predict_flood' => $prediction , 'predict_windstorm' => $prediction1]);
 
             

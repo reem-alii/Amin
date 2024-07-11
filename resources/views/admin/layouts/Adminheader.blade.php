@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="{{asset('css/weather.css')}}">
     <link rel="stylesheet" href="{{asset('css/loginstyle.css')}}">
     <link rel="stylesheet" href="{{asset('css/signupstyle.css')}}">
-    <link rel="stylesheet" href="{{asset('css/volunteering.css')}}">
     <!--Normalize ALL Elements-->
     <link rel="stylesheet" href="{{asset('css/normalize.css')}}">
     <!--Font Awesome Library-->
@@ -37,7 +36,7 @@
                 <i class="fa-solid fa-xmark navCloseBtn"></i>
                 <li><a href="/admin/home" class="active">Home</a></li>
                 <li><a id="w-link" href="#weathe">Weather</a></li>
-                <li><a href="/admin/dashboard" >Dashboard</a></li>
+                <li><a href="/admin/adminUser" >Dashboard</a></li>
             </ul>
         </div>
         <div class="icons">

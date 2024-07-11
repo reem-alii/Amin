@@ -9,9 +9,7 @@
             <div>
                 <p>For Forecasting and Civil Defense</p>
             </div>
-            <div>
-                <a href="/register"><button class="green-btn">Sign Up</button> </a>
-            </div>  
+             
         </section>
         <!-- Weather-->
         <section class="weather" id="weather">

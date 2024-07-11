@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Flood extends Model
 {
     use HasFactory;
-    protected $fillable = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DECMB'];
+    protected $fillable = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DECMB','flood_Pred','date1'];
 }
 
 
